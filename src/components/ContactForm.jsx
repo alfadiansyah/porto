@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { cn } from "@/lib/utils";
 import { GridPattern } from "@/components/ui/grid-pattern";
-import { MessageSquare, Mail, Copy, Check, Send, Sparkles } from 'lucide-react';
+import { MessageSquare, Copy, Check, Send, Sparkles } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export default function ContactForm({ onShowToast }) {
@@ -9,14 +9,6 @@ export default function ContactForm({ onShowToast }) {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [sent, setSent] = useState(false);
-  const [stars, setStars] = useState(null);
-
-  useEffect(() => {
-    fetch('https://api.github.com/repos/Deadcoder001/React-Personal-Portfolio')
-      .then(res => res.json())
-      .then(data => setStars(data.stargazers_count || 12))
-      .catch(() => setStars(12));
-  }, []);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(personalInfo.email);
@@ -31,8 +23,16 @@ export default function ContactForm({ onShowToast }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    // Construct pre-filled WhatsApp message
+    const formattedText = `Hi Giovanni! 👋%0A%0A*Name:* ${encodeURIComponent(form.name)}%0A*Email:* ${encodeURIComponent(form.email)}%0A%0A*Message:*%0A${encodeURIComponent(form.message)}`;
+    const waUrl = `https://wa.me/6281395540904?text=${formattedText}`;
+    
+    // Open WhatsApp in new tab
+    window.open(waUrl, '_blank', 'noopener,noreferrer');
+
     setSent(true);
-    if (onShowToast) onShowToast('Message transmitted! Thank you.');
+    if (onShowToast) onShowToast('Redirecting to WhatsApp chat...');
   };
 
   return (
@@ -49,14 +49,14 @@ export default function ContactForm({ onShowToast }) {
       <div className="relative z-10 container px-4 mx-auto">
         
         {/* Centered Form Box */}
-        <div className="max-w-md mx-auto px-8 py-8 bg-gray-50 dark:bg-[#161922] rounded-3xl border border-gray-200 dark:border-gray-800 shadow-xl">
+        <div className="max-w-md mx-auto px-6 sm:px-8 py-8 bg-gray-50 dark:bg-[#161922] rounded-3xl border border-gray-200 dark:border-gray-800 shadow-xl">
           
           <div className="text-center mb-6">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white">
               Contact Giovanni
             </h2>
             <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-              Have a project or engineering opportunity? Let's connect!
+              Have a project or engineering opportunity? Let's connect directly via WhatsApp!
             </p>
           </div>
 
@@ -65,11 +65,14 @@ export default function ContactForm({ onShowToast }) {
               <div className="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center mx-auto">
                 <Check className="w-5 h-5" />
               </div>
-              <h4 className="font-bold text-sm text-emerald-800 dark:text-emerald-300">Message Received!</h4>
-              <p className="text-xs text-gray-600 dark:text-gray-400">Thank you for reaching out. I will reply to your email promptly.</p>
+              <h4 className="font-bold text-sm text-emerald-800 dark:text-emerald-300">WhatsApp Chat Opened!</h4>
+              <p className="text-xs text-gray-600 dark:text-gray-400">Your message has been formatted and transferred to WhatsApp.</p>
               <button
-                onClick={() => setSent(false)}
-                className="mt-2 text-xs font-bold text-emerald-600 underline"
+                onClick={() => {
+                  setSent(false);
+                  setForm({ name: '', email: '', message: '' });
+                }}
+                className="mt-2 text-xs font-bold text-emerald-600 dark:text-emerald-400 underline"
               >
                 Send another message
               </button>
@@ -79,7 +82,7 @@ export default function ContactForm({ onShowToast }) {
               <div>
                 <label className="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1" htmlFor="name">Your Name</label>
                 <input
-                  className="w-full px-4 py-2.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
+                  className="w-full px-4 py-2.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-emerald-400 transition"
                   placeholder="Enter your name"
                   type="text"
                   name="name"
@@ -92,7 +95,7 @@ export default function ContactForm({ onShowToast }) {
               <div>
                 <label className="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1" htmlFor="email">Your Email</label>
                 <input
-                  className="w-full px-4 py-2.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
+                  className="w-full px-4 py-2.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-emerald-400 transition"
                   placeholder="Enter your email address"
                   name="email"
                   id="email"
@@ -105,7 +108,7 @@ export default function ContactForm({ onShowToast }) {
               <div>
                 <label className="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1" htmlFor="message">Your Message</label>
                 <textarea
-                  className="w-full px-4 py-2.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-yellow-400 transition resize-none"
+                  className="w-full px-4 py-2.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-emerald-400 transition resize-none"
                   rows="3"
                   placeholder="Describe your role or project..."
                   name="message"
@@ -116,27 +119,27 @@ export default function ContactForm({ onShowToast }) {
                 ></textarea>
               </div>
               <button
-                className="w-full bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-3 px-4 rounded-xl shadow-md transition duration-300 text-xs uppercase tracking-wider"
+                className="w-full bg-emerald-500 hover:bg-emerald-400 text-white font-bold py-3 px-4 rounded-xl shadow-md transition duration-300 text-xs uppercase tracking-wider flex items-center justify-center gap-2"
                 type="submit"
               >
-                Send Message
+                <MessageSquare className="w-4 h-4" /> Send via WhatsApp
               </button>
             </form>
           )}
 
-          {/* Quick WhatsApp & Email Copy Actions */}
+          {/* Quick Actions */}
           <div className="flex gap-2 mt-4">
             <a
-              href={personalInfo.whatsapp}
+              href="https://wa.me/6281395540904?text=Hi%20Giovanni,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect."
               target="_blank"
               rel="noreferrer"
-              className="flex-1 py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm transition"
+              className="flex-1 py-2.5 px-3 rounded-xl bg-emerald-600/15 hover:bg-emerald-600/25 text-emerald-600 dark:text-emerald-400 font-bold text-xs flex items-center justify-center gap-1.5 border border-emerald-500/30 transition"
             >
-              <MessageSquare className="w-3.5 h-3.5" /> WhatsApp
+              <MessageSquare className="w-3.5 h-3.5" /> Quick Chat
             </a>
             <button
               onClick={handleCopyEmail}
-              className="flex-1 py-2.5 px-3 rounded-xl bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 text-gray-800 dark:text-gray-200 font-bold text-xs flex items-center justify-center gap-1.5 transition"
+              className="flex-1 py-2.5 px-3 rounded-xl bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 font-bold text-xs flex items-center justify-center gap-1.5 transition"
             >
               {copiedEmail ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />} Copy Email
             </button>
@@ -144,7 +147,7 @@ export default function ContactForm({ onShowToast }) {
 
         </div>
 
-        {/* Rainbow GitHub Button */}
+        {/* GitHub Button */}
         <div className="flex justify-center mt-8">
           <a
             href={personalInfo.github}
