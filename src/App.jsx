@@ -8,12 +8,10 @@ import Experience from './components/Experience';
 import Projects from './components/Projects';
 import ContactForm from './components/ContactForm';
 import SocialMagnet from './components/SocialMagnet';
-import CvDownloadModal from './components/CvDownloadModal';
 import { CheckCircle2, X } from 'lucide-react';
 
 export default function App() {
   const [isDark, setIsDark] = useState(true);
-  const [isCvModalOpen, setIsCvModalOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
   const [toastMessage, setToastMessage] = useState(null);
 
@@ -99,7 +97,6 @@ export default function App() {
       <Navbar
         isDark={isDark}
         toggleTheme={toggleTheme}
-        onOpenCvModal={() => setIsCvModalOpen(true)}
         scrollToSection={scrollToSection}
         activeSection={activeSection}
       />
@@ -108,9 +105,7 @@ export default function App() {
       <main>
         
         {/* 1. Spline 3D Hero Section */}
-        <Hero
-          onOpenCvModal={() => setIsCvModalOpen(true)}
-        />
+        <Hero />
 
         {/* 2. About Me with ScrollReveal & Highlighter */}
         <About />
@@ -126,7 +121,7 @@ export default function App() {
           isDark={isDark}
         />
 
-        {/* 6. Featured Projects with GlareHover & InteractiveGridPattern */}
+        {/* 6. Featured Projects with GlareHover */}
         <Projects />
 
         {/* 7. Contact Form with GridPattern */}
@@ -138,13 +133,6 @@ export default function App() {
         <SocialMagnet />
 
       </main>
-
-      {/* CV Download Hub Modal */}
-      <CvDownloadModal
-        isOpen={isCvModalOpen}
-        onClose={() => setIsCvModalOpen(false)}
-        isDark={isDark}
-      />
 
     </div>
   );

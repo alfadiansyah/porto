@@ -5,9 +5,9 @@ import RotatingText from './RotatingText';
 import { WordRotate } from "@/components/ui/word-rotate";
 
 /**
- * 3D Spline Hero Section with perfectly centered 3D robot and symmetrical off-screen watermark clipping.
+ * 3D Spline Hero Section with 1-Click Direct CV Download.
  */
-export default function Hero({ onOpenCvModal }) {
+export default function Hero() {
   const containerRef = useRef(null);
 
   const skills = [
@@ -21,10 +21,9 @@ export default function Hero({ onOpenCvModal }) {
   
   const greetings = ["Hello", "Halo", "Ciao", "Hola", "مرحبا"];
 
-  // Secondary DOM / Shadow DOM cleanup
+  // Secondary DOM / Shadow DOM cleanup for Spline badge
   useEffect(() => {
     const removeWatermark = () => {
-      // 1. Standard DOM
       const watermarks = document.querySelectorAll(
         '#spline-watermark, #logo, a[href*="spline.design"], [data-spline-watermark], [class*="watermark"], [id*="watermark"]'
       );
@@ -35,7 +34,6 @@ export default function Hero({ onOpenCvModal }) {
         try { el.remove(); } catch (e) {}
       });
 
-      // 2. Deep Shadow DOM traversal
       document.querySelectorAll('*').forEach((node) => {
         if (node.shadowRoot) {
           const badge = node.shadowRoot.querySelector('#logo, a[href*="spline.design"], #spline-watermark, [class*="watermark"], [id*="watermark"]');
@@ -56,7 +54,7 @@ export default function Hero({ onOpenCvModal }) {
   return (
     <section id="hero" ref={containerRef} className="relative w-full h-screen overflow-hidden bg-black">
       
-      {/* 1. Symmetrical 3D Spline Background (Dead center alignment with equal left-right clipping) */}
+      {/* 1. Symmetrical 3D Spline Background (Centered with off-screen watermark clipping) */}
       <div className="absolute inset-0 z-10 w-full h-full overflow-hidden pointer-events-auto flex items-center justify-center">
         <div className="absolute -top-[120px] -bottom-[120px] -left-[320px] -right-[320px] w-[calc(100%+640px)] h-[calc(100%+240px)]">
           <Spline
@@ -118,13 +116,17 @@ export default function Hero({ onOpenCvModal }) {
               <ArrowRight size={18} />
             </a>
             
-            <button
-              onClick={onOpenCvModal}
+            {/* Direct 1-Click CV Download */}
+            <a
+              href="/cv/CV_Giovanni_Alfadiansyah.pdf"
+              download="CV_Giovanni_Alfadiansyah.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 text-sm sm:text-base font-bold text-white transition-all duration-300 bg-black/40 border border-white/80 backdrop-blur-sm rounded-xl shadow-lg pointer-events-auto hover:bg-white hover:text-black hover:scale-105"
             >
               <Download size={18} />
               Download CV
-            </button>
+            </a>
             
             <a
               href="https://wa.me/6281395540904?text=Hi%20Giovanni,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect."
