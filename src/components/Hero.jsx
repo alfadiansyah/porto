@@ -118,7 +118,7 @@ export default function Hero() {
             
             {/* Direct 1-Click CV Download */}
             <a
-              href="/cv/CV_Giovanni_Alfadiansyah.pdf"
+              href="./cv/CV_Giovanni_Alfadiansyah.pdf"
               download="CV_Giovanni_Alfadiansyah.pdf"
               target="_blank"
               rel="noopener noreferrer"

@@ -92,7 +92,7 @@ export default function Navbar({ isDark, toggleTheme, scrollToSection, activeSec
 
           {/* Direct Single CV Download Button */}
           <a
-            href="/cv/CV_Giovanni_Alfadiansyah.pdf"
+            href="./cv/CV_Giovanni_Alfadiansyah.pdf"
             download="CV_Giovanni_Alfadiansyah.pdf"
             target="_blank"
             rel="noopener noreferrer"
@@ -136,7 +136,7 @@ export default function Navbar({ isDark, toggleTheme, scrollToSection, activeSec
             </button>
           ))}
           <a
-            href="/cv/CV_Giovanni_Alfadiansyah.pdf"
+            href="./cv/CV_Giovanni_Alfadiansyah.pdf"
             download="CV_Giovanni_Alfadiansyah.pdf"
             target="_blank"
             rel="noopener noreferrer"
