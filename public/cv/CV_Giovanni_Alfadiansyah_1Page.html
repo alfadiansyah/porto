@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Giovanni Alfadiansyah - Resume (1-Page ATS)</title>
+<style>
+    @page {
+        size: A4;
+        margin: 8mm 11mm 8mm 11mm;
+    }
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        font-family: 'Segoe UI', 'Calibri', Arial, sans-serif;
+        color: #1a1a1a;
+        background-color: #ffffff;
+        font-size: 8pt;
+        line-height: 1.22;
+    }
+    .header {
+        text-align: center;
+        margin-bottom: 4px;
+        border-bottom: 1.5px solid #0f3460;
+        padding-bottom: 2px;
+    }
+    .header h1 {
+        font-size: 16pt;
+        font-weight: 700;
+        color: #0f3460;
+        margin-bottom: 1px;
+        text-transform: uppercase;
+    }
+    .header .subtitle {
+        font-size: 8.8pt;
+        font-weight: 600;
+        color: #1e40af;
+        margin-bottom: 2px;
+    }
+    .header .contact {
+        font-size: 7.8pt;
+        color: #374151;
+    }
+    .header .contact a {
+        color: #1e40af;
+        text-decoration: none;
+    }
+    .section {
+        margin-bottom: 4px;
+    }
+    .section-title {
+        font-size: 8.8pt;
+        font-weight: 700;
+        color: #0f3460;
+        text-transform: uppercase;
+        border-bottom: 1px solid #0f3460;
+        padding-bottom: 1px;
+        margin-bottom: 2.5px;
+        letter-spacing: 0.3px;
+    }
+    .summary-text {
+        font-size: 7.9pt;
+        text-align: justify;
+        line-height: 1.24;
+    }
+    .item {
+        margin-bottom: 3.5px;
+    }
+    .item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        font-size: 8.3pt;
+    }
+    .item-header .title {
+        font-weight: 700;
+        color: #000000;
+    }
+    .item-header .location-date {
+        color: #4b5563;
+        font-size: 7.6pt;
+        font-weight: 600;
+        text-align: right;
+    }
+    .item-subheader {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        font-size: 7.9pt;
+        font-weight: 600;
+        color: #1e40af;
+        margin-bottom: 1px;
+    }
+    ul {
+        margin-left: 12px;
+        margin-top: 1px;
+        margin-bottom: 1px;
+    }
+    li {
+        font-size: 7.8pt;
+        margin-bottom: 1px;
+        line-height: 1.2;
+        text-align: justify;
+    }
+    li strong {
+        color: #000000;
+    }
+    .skills-table {
+        width: 100%;
+        font-size: 7.8pt;
+        line-height: 1.22;
+    }
+    .skills-row {
+        margin-bottom: 1px;
+    }
+    .skills-row strong {
+        color: #000000;
+        display: inline-block;
+        min-width: 150px;
+    }
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Giovanni Alfadiansyah</h1>
+    <div class="subtitle">Software Engineer | Full Stack Developer | Technical Consultant</div>
+    <div class="contact">
+        Bogor, West Java, Indonesia &nbsp;|&nbsp; 
+        +62 813-9554-0904 &nbsp;|&nbsp; 
+        <a href="mailto:g.alfadiansyah@gmail.com">g.alfadiansyah@gmail.com</a> &nbsp;|&nbsp; 
+        <a href="https://www.linkedin.com/in/giovanni-alfadiansyah/">linkedin.com/in/giovanni-alfadiansyah</a>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-title">Professional Summary</div>
+    <p class="summary-text">
+        Results-driven <strong>Software Engineer & Technical Consultant</strong> with 3+ years of professional experience in enterprise backend architecture, full-stack systems, and cybersecurity applications. Currently engineering backend microservices for <strong>Badan Siber dan Sandi Negara (BSSN)</strong> using <strong>Java 21, Spring Boot, and SSO ConnectIDN (FAL2)</strong>. Proven track record in modernizing legacy banking services to <strong>Java & Spring Boot</strong> for <strong>Bank Mega (CCBM Division)</strong>, engineering <strong>Odoo ERP</strong> systems for <strong>Singapore Technologies (ST MES)</strong> with <strong>Python</strong>, and building full-stack applications with <strong>C# (.NET), React.js, and PostgreSQL</strong>.
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">Technical Skills</div>
+    <div class="skills-table">
+        <div class="skills-row"><strong>Languages & Databases:</strong> Java (21/17), Python, TypeScript, JavaScript, C# (.NET), PHP, SQL, PostgreSQL, Redis, MySQL</div>
+        <div class="skills-row"><strong>Frameworks & Security:</strong> Spring Boot 3/4, Spring Security, SSO ConnectIDN (FAL2), TOTP MFA, NestJS, ASP.NET Core, React.js, Odoo ERP</div>
+        <div class="skills-row"><strong>DevOps & Tools:</strong> Git, GitHub, Docker, Linux/VPS Administration, Testcontainers, AWS S3, Postman, CI/CD, Agile/Scrum</div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-title">Work Experience</div>
+
+    <div class="item">
+        <div class="item-header">
+            <span class="title">Badan Siber dan Sandi Negara (BSSN)</span>
+            <span class="location-date">Jakarta, Indonesia | Apr 2026 – Present</span>
+        </div>
+        <div class="item-subheader">
+            <span>Software Engineer (Backend / Java)</span>
+        </div>
+        <ul>
+            <li><strong>LMS Backend & Security:</strong> Architect high-security backend microservices in <strong>Java 21 & Spring Boot</strong>, integrating <strong>SSO ConnectIDN FAL2</strong> (JWS/JWE), <strong>TOTP MFA</strong>, and Refresh Token Rotation (RTR).</li>
+            <li><strong>Data & Storage:</strong> Built 24 JPA entities across 38 Flyway migrations in <strong>PostgreSQL</strong> with AWS S3 media storage and dynamic QR-verified certificate engine.</li>
+        </ul>
+    </div>
+
+    <div class="item">
+        <div class="item-header">
+            <span class="title">PT. Wixander Beneficia Technology</span>
+            <span class="location-date">Jakarta, Indonesia | Aug 2025 – Mar 2026</span>
+        </div>
+        <div class="item-subheader">
+            <span>Technical Business Analyst & Odoo ERP Consultant</span>
+        </div>
+        <ul>
+            <li><strong>ERP & MES:</strong> Led Odoo ERP implementation for <em>Teck Leong Metals ERP</em> and <em>ST MES (Singapore Technologies - Manufacturing Execution System)</em> with custom <strong>Python</strong> modules and barcode shop-floor routing.</li>
+        </ul>
+    </div>
+
+    <div class="item">
+        <div class="item-header">
+            <span class="title">PT Xsis Mitra Utama</span>
+            <span class="location-date">Jakarta, Indonesia | Oct 2023 – Apr 2025</span>
+        </div>
+        <div class="item-subheader">
+            <span>Software Engineer (Backend & Full Stack)</span>
+        </div>
+        <ul>
+            <li><strong>Bank Mega (CCBM Division) — Contract: 3 + 12 Months:</strong> Spearheaded backend revamp of Call Center Bank Mega (CCBM) services from legacy <strong>PHP to Java & Spring Boot</strong> (6 months), followed by production maintenance and 99.9% uptime delivery.</li>
+            <li><strong>Internal Pharmacy System (C# & React):</strong> Co-developed internal healthcare management portal using <strong>C# (ASP.NET Core)</strong> and <strong>React.js</strong> in a 4-developer squad, automating prescription processing and stock reconciliation.</li>
+        </ul>
+    </div>
+
+    <div class="item">
+        <div class="item-header">
+            <span class="title">Diceritain</span>
+            <span class="location-date">West Java, Indonesia | Oct 2022 – Dec 2022</span>
+        </div>
+        <div class="item-subheader">
+            <span>Software Engineer Intern (Frontend / Full Stack)</span>
+        </div>
+        <ul>
+            <li><strong>Rebranding & Performance:</strong> Rebuilt company platform with <strong>React.js & Next.js</strong>, improving load speed by 35%+ and boosting SEO indexing.</li>
+        </ul>
+    </div>
+
+    <div class="item">
+        <div class="item-header">
+            <span class="title">PLABS.ID</span>
+            <span class="location-date">West Java, Indonesia | Mar 2021 – Dec 2021</span>
+        </div>
+        <div class="item-subheader">
+            <span>Software Engineer Intern (Full Stack)</span>
+        </div>
+        <ul>
+            <li><strong>E-Commerce System:</strong> Built <em>Kapalasar</em> e-commerce portal from scratch using <strong>Laravel, Node.js, and React.js</strong> with MySQL database optimization and payment gateway integration.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-title">Key Projects</div>
+    <div class="item">
+        <div class="item-header">
+            <span class="title">Online Tutoring Platform (UP Learning Centre)</span>
+            <span class="location-date">NestJS, TypeScript, PostgreSQL, Docker</span>
+        </div>
+        <ul>
+            <li>Architected RBAC authentication (JWT), dynamic teacher scheduling algorithms, and normalized PostgreSQL schemas with Docker VPS deployment.</li>
+        </ul>
+    </div>
+    <div class="item">
+        <div class="item-header">
+            <span class="title">Faculty Data Monitoring Portal — FMIPA UNPAD</span>
+            <span class="location-date">Laravel, PHP, MySQL, Bootstrap</span>
+        </div>
+        <ul>
+            <li>Engineered centralized data monitoring dashboard, eliminating manual spreadsheets and reducing administrative turnaround by 50%.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-title">Education & Certifications</div>
+    <div class="item">
+        <div class="item-header">
+            <span class="title">Universitas Padjadjaran (UNPAD)</span>
+            <span class="location-date">Aug 2017 – Aug 2023</span>
+        </div>
+        <div class="item-subheader">
+            <span>Bachelor of Science in Computer Science (S1 Teknik Informatika / Ilmu Komputer)</span>
+        </div>
+    </div>
+    <div class="item" style="margin-top: 1px;">
+        <p style="font-size: 7.7pt; color: #262626;">
+            <strong>Certifications:</strong> Back End Development & APIs (freeCodeCamp) &nbsp;|&nbsp; Enterprise .NET (C#) & Java Bootcamp (Xsis Academy)
+        </p>
+    </div>
+</div>
+
+</body>
+</html>

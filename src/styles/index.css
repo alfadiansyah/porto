@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #ffffff;
+    color: #0f172a;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition-property: color, background-color, border-color;
+    transition-duration: 200ms;
+  }
+  
+  html.dark body {
+    background-color: #0f1117;
+    color: #f1f5f9;
+  }
+}
+
+/* Wavy decorative underline utilities inspired by Ashif Elahi */
+.wavy-yellow {
+  text-decoration: underline wavy #f5d061 3px;
+  text-underline-offset: 6px;
+}
+.wavy-blue {
+  text-decoration: underline wavy #39a2db 3px;
+  text-underline-offset: 6px;
+}
+.wavy-coral {
+  text-decoration: underline wavy #f85959 3px;
+  text-underline-offset: 6px;
+}
+.wavy-purple {
+  text-decoration: underline wavy #7c3aed 3px;
+  text-underline-offset: 6px;
+}
+
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(57, 162, 219, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(57, 162, 219, 0.6);
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float-slow {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+/* HIDE SPLINE WATERMARK BADGE COMPLETELY */
+#spline-watermark,
+a[href*="spline.design"],
+[data-spline-watermark],
+[class*="spline-watermark"],
+[id*="spline-watermark"],
+#hero a[href*="spline"],
+#hero > div > a {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+}
