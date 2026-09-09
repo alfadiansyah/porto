@@ -160,20 +160,26 @@ export default function Services() {
                     {service.tagline}
                   </p>
 
-                  {/* Price Tag (Solid 30% Surface) */}
+                  {/* Price Tag (Clean Modern SaaS Layout, No Awkward Wrapping) */}
                   <div className="p-4 rounded-xl bg-white dark:bg-[#0f1117] border border-slate-200 dark:border-slate-800 mb-6">
-                    <div className="flex items-baseline gap-1.5">
-                      <span className="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white font-mono">
-                        {currency === 'IDR' ? `Rp ${service.priceIDR}` : `$${service.priceUSD}`}
-                      </span>
-                      <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">
-                        / {currency === 'IDR' ? service.periodIDR : service.periodUSD}
+                    <div className="flex items-baseline justify-between gap-2 flex-wrap">
+                      <div className="flex items-baseline gap-1.5 whitespace-nowrap">
+                        <span className="text-sm sm:text-base font-bold text-slate-500 dark:text-slate-400">
+                          {currency === 'IDR' ? 'Rp' : '$'}
+                        </span>
+                        <span className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+                          {currency === 'IDR' ? service.priceIDR : service.priceUSD}
+                        </span>
+                      </div>
+                      
+                      <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 whitespace-nowrap">
+                        {service.periodIDR === 'per month' || service.periodUSD === 'per month' ? '/ month' : '/ project'}
                       </span>
                     </div>
                     
-                    <div className="flex items-center gap-1.5 mt-2 pt-2 border-t border-slate-100 dark:border-slate-800/80 text-[11px] font-medium text-slate-500 dark:text-slate-400">
+                    <div className="flex items-center gap-1.5 mt-3 pt-2.5 border-t border-slate-100 dark:border-slate-800/80 text-[11px] font-medium text-slate-500 dark:text-slate-400">
                       <Clock className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 shrink-0" />
-                      <span>Estimated Timeline: <strong className="text-slate-800 dark:text-slate-200">{service.deliveryTime}</strong></span>
+                      <span>Timeline: <strong className="text-slate-800 dark:text-slate-200">{service.deliveryTime}</strong></span>
                     </div>
                   </div>
 
