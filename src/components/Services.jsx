@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 
 export default function Services() {
-  const { freelanceServices, personalInfo } = portfolioData;
+  const { freelanceServices } = portfolioData;
   const [currency, setCurrency] = useState('IDR'); // 'IDR' or 'USD'
 
   const tierIcons = {
@@ -26,7 +26,7 @@ export default function Services() {
     5: Zap
   };
 
-  const getTierGradient = (tier, isDark) => {
+  const getTierGradient = (tier) => {
     switch (tier) {
       case 1:
         return 'from-blue-500/10 to-indigo-500/5 hover:border-blue-500/50';
@@ -49,12 +49,7 @@ export default function Services() {
       ? `$${service.priceUSD} USD (${service.periodUSD})` 
       : `Rp ${service.priceIDR} (${service.periodIDR})`;
 
-    let message = '';
-    if (isUSD) {
-      message = `Hi Giovanni! 👋%0A%0AI came across your portfolio and I would like to consult / order the following service:%0A%0A*Tier:* Tier ${service.tier} - ${encodeURIComponent(service.name)}%0A*Rate:* ${encodeURIComponent(priceText)}%0A*Delivery Target:* ${encodeURIComponent(service.deliveryTime)}%0A%0ACould we discuss the project requirements? Thank you!`;
-    } else {
-      message = `Halo Giovanni! 👋%0A%0ASaya melihat portofolio Anda dan ingin konsultasi / memesan paket freelance berikut:%0A%0A*Paket:* Tier ${service.tier} - ${encodeURIComponent(service.name)}%0A*Estimasi Biaya:* ${encodeURIComponent(priceText)}%0A*Estimasi Waktu:* ${encodeURIComponent(service.deliveryTime)}%0A%0ABoleh kita diskusikan detail kebutuhannya? Terima kasih!`;
-    }
+    const message = `Hi Giovanni! 👋%0A%0AI came across your portfolio and would like to inquire about the following service package:%0A%0A*Service:* Tier ${service.tier} - ${encodeURIComponent(service.name)}%0A*Estimated Rate:* ${encodeURIComponent(priceText)}%0A*Estimated Timeline:* ${encodeURIComponent(service.deliveryTime)}%0A%0ACould we schedule a quick discussion on the project requirements? Thank you!`;
 
     const waUrl = `https://wa.me/6281395540904?text=${message}`;
     window.open(waUrl, '_blank', 'noopener,noreferrer');
@@ -79,13 +74,13 @@ export default function Services() {
             </h2>
           </div>
           <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mt-2">
-            Pilihan paket pengembangan software enterprise, custom ERP, backend microservices, hingga dedicated engineering support.
+            Engineering packages designed for modern web apps, enterprise ERP customizations, secure backend microservices, and dedicated monthly retainers.
           </p>
 
           {/* Currency Switcher Toggle */}
           <div className="flex items-center justify-center gap-3 mt-8">
             <span className={`text-xs sm:text-sm font-bold transition-colors ${currency === 'IDR' ? 'text-blue-600 dark:text-cyan-400 font-extrabold' : 'text-gray-500 dark:text-gray-400'}`}>
-              🇮🇩 Rupiah (IDR)
+              🇮🇩 Indonesian Rupiah (IDR)
             </span>
 
             <button
@@ -103,12 +98,12 @@ export default function Services() {
             </button>
 
             <span className={`text-xs sm:text-sm font-bold transition-colors ${currency === 'USD' ? 'text-blue-600 dark:text-cyan-400 font-extrabold' : 'text-gray-500 dark:text-gray-400'}`}>
-              🌎 Global (USD)
+              🌎 Global Currency (USD)
             </span>
           </div>
 
           <div className="text-[11px] text-gray-500 dark:text-gray-400 mt-2">
-            {currency === 'IDR' ? 'Harga transparan dan fleksibel sesuai lingkup kebutuhan proyek Anda.' : 'International rates for global clients & remote retainer contracts.'}
+            Transparent and flexible pricing tailored to your exact technical and business scope.
           </div>
         </div>
 
@@ -173,14 +168,14 @@ export default function Services() {
                     
                     <div className="flex items-center gap-1.5 mt-2 pt-2 border-t border-gray-100 dark:border-gray-800 text-[11px] font-medium text-gray-500 dark:text-gray-400">
                       <Clock className="w-3.5 h-3.5 text-blue-500 dark:text-cyan-400 shrink-0" />
-                      <span>Estimasi Waktu: <strong className="text-gray-800 dark:text-gray-200">{service.deliveryTime}</strong></span>
+                      <span>Estimated Timeline: <strong className="text-gray-800 dark:text-gray-200">{service.deliveryTime}</strong></span>
                     </div>
                   </div>
 
                   {/* Deliverables List */}
                   <div className="space-y-2.5 mb-6">
                     <div className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">
-                      Deliverables & Features:
+                      Deliverables & Scope:
                     </div>
                     <ul className="space-y-2">
                       {service.features.map((feat, fIdx) => (
@@ -196,7 +191,7 @@ export default function Services() {
                 {/* Card Footer: Ideal For & CTA */}
                 <div className="pt-4 border-t border-gray-200/80 dark:border-gray-800/80 mt-2 space-y-3">
                   <div className="text-[11px] text-gray-500 dark:text-gray-400 bg-gray-100/80 dark:bg-gray-800/50 px-3 py-2 rounded-xl border border-gray-200/60 dark:border-gray-700/50">
-                    <strong className="text-gray-700 dark:text-gray-300">Cocok Untuk:</strong> {service.idealFor}
+                    <strong className="text-gray-700 dark:text-gray-300">Ideal For:</strong> {service.idealFor}
                   </div>
 
                   <button
@@ -209,7 +204,7 @@ export default function Services() {
                   >
                     <MessageSquare className="w-4 h-4" />
                     <span>
-                      {currency === 'IDR' ? `Pilih Tier ${service.tier} (Konsultasi)` : `Select Tier ${service.tier} (Get Started)`}
+                      Select Tier {service.tier} (Inquire Scope)
                     </span>
                   </button>
                 </div>
@@ -222,19 +217,19 @@ export default function Services() {
         {/* Custom Project Note */}
         <div className="mt-12 p-6 rounded-3xl border border-gray-200 dark:border-gray-800 bg-gray-50/60 dark:bg-[#161922]/60 text-center max-w-2xl mx-auto backdrop-blur-sm">
           <h4 className="text-sm font-bold text-gray-900 dark:text-white mb-1">
-            Punya Kebutuhan Spesifik atau Custom Architecture? 💡
+            Need a Custom Project or Enterprise Architecture? 💡
           </h4>
           <p className="text-xs text-gray-600 dark:text-gray-400 mb-4">
-            Scope proyek dapat dikustomisasi sesuai anggaran dan kebutuhan teknis unik perusahaan Anda.
+            Project scope and engineering resources can be tailored to match your specific budget, SLA, and technical requirements.
           </p>
           <a
-            href="https://wa.me/6281395540904?text=Halo%20Giovanni,%20saya%20punya%20kebutuhan%20proyek%20custom%20dan%20ingin%20berdiskusi."
+            href="https://wa.me/6281395540904?text=Hi%20Giovanni,%20I%20have%20a%20custom%20engineering%20project%20and%20would%20like%20to%20discuss."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-transform hover:scale-105"
           >
             <MessageSquare className="w-3.5 h-3.5" />
-            Diskusi Proyek Custom via WhatsApp
+            Discuss Custom Project on WhatsApp
           </a>
         </div>
 

@@ -408,12 +408,12 @@ export const portfolioData = {
       tier: 1,
       id: "starter-landing",
       name: "Starter Landing Page / Compro",
-      tagline: "High-converting, responsive company profile & marketing landing page.",
+      tagline: "High-converting, responsive company profile and marketing landing page.",
       priceIDR: "1.000.000",
       priceUSD: "100",
       periodIDR: "per project",
       periodUSD: "per project",
-      deliveryTime: "3 – 5 Hari Kerja",
+      deliveryTime: "3 – 5 Business Days",
       badge: null,
       color: "blue",
       features: [
@@ -424,7 +424,7 @@ export const portfolioData = {
         "Free Deployment Setup (Netlify / Vercel / GitHub Pages)",
         "2x Iteration & Revision Cycles"
       ],
-      idealFor: "UMKM, Personal Branding, Startup Launch, & Profile Perusahaan"
+      idealFor: "SMBs, Personal Brands, Startup Launches & Company Profiles"
     },
     {
       tier: 2,
@@ -435,7 +435,7 @@ export const portfolioData = {
       priceUSD: "500",
       periodIDR: "per project",
       periodUSD: "per project",
-      deliveryTime: "1 – 2 Minggu",
+      deliveryTime: "1 – 2 Weeks",
       badge: null,
       color: "cyan",
       features: [
@@ -446,7 +446,7 @@ export const portfolioData = {
         "RESTful API Integration & Form Validation",
         "Source Code Handover + Technical Documentation"
       ],
-      idealFor: "SaaS MVP, Internal Business Tool, Custom Catalog, & Multi-role Portals"
+      idealFor: "SaaS MVPs, Internal Business Tools, Custom Catalogs & Multi-role Portals"
     },
     {
       tier: 3,
@@ -457,7 +457,7 @@ export const portfolioData = {
       priceUSD: "700",
       periodIDR: "per project",
       periodUSD: "per project",
-      deliveryTime: "2 – 3 Minggu",
+      deliveryTime: "2 – 3 Weeks",
       badge: "Most Popular 🔥",
       color: "emerald",
       features: [
@@ -468,7 +468,7 @@ export const portfolioData = {
         "Database Migration & Zero-Downtime Data Import",
         "Linux VPS Deployment & Post-Launch Support (14 Days)"
       ],
-      idealFor: "Perusahaan Manufaktur, Distributor, Supply Chain, & Bisnis Berkembang"
+      idealFor: "Manufacturing Companies, Distributors, Supply Chain & Growing Businesses"
     },
     {
       tier: 4,
@@ -476,10 +476,10 @@ export const portfolioData = {
       name: "Backend & Cybersecurity Architecture",
       tagline: "High-security Java 21 / Spring Boot microservices with banking-grade compliance.",
       priceIDR: "15.000.000",
-      priceUSD: "1,250",
+      priceUSD: "1250",
       periodIDR: "per project",
       periodUSD: "per project",
-      deliveryTime: "3 – 4 Minggu",
+      deliveryTime: "3 – 4 Weeks",
       badge: "Enterprise Grade 🛡️",
       color: "purple",
       features: [
@@ -490,7 +490,7 @@ export const portfolioData = {
         "High-Throughput Scalable REST APIs (99.9% Uptime SLA)",
         "Automated Testing (JUnit 5, Testcontainers) & Swagger Contracts"
       ],
-      idealFor: "Institusi Finansial/FinTech, Government LMS/Identity, & High-Traffic APIs"
+      idealFor: "FinTech Institutions, Enterprise LMS / Identity & High-Traffic APIs"
     },
     {
       tier: 5,
@@ -498,21 +498,21 @@ export const portfolioData = {
       name: "Dedicated Full Stack Engineer",
       tagline: "Dedicated full stack engineer & technical consultant for your development team.",
       priceIDR: "20.000.000",
-      priceUSD: "1,500",
-      periodIDR: "per bulan",
+      priceUSD: "1500",
+      periodIDR: "per month",
       periodUSD: "per month",
-      deliveryTime: "160 Jam / Bulan (Dedicated)",
+      deliveryTime: "160 Hours / Month (Dedicated)",
       badge: "Monthly Retainer 💎",
       color: "amber",
       features: [
-        "160 Jam Kerja Dedicated / Bulan (Full Stack Engineer & Tech Consultant)",
+        "160 Dedicated Working Hours / Month (Full Stack Engineer & Tech Consultant)",
         "Agile / Scrum Sprint Participation & Daily Standup",
         "Multi-stack Mastery: Java Spring Boot, C# .NET, Python Odoo, React, NestJS",
         "System Architecture Design, Code Review, & Refactoring Legacy Code",
         "CI/CD Pipeline Setup & DevOps Deployment (Docker / Linux VPS)",
         "Priority Direct Communication (WhatsApp / Slack / Google Meet)"
       ],
-      idealFor: "Startup Seri A+, Software House, & Perusahaan yang butuh Dedicated Full Stack Engineer"
+      idealFor: "Series A+ Startups, Software Houses & Scaling Engineering Teams"
     }
   ]
 };
