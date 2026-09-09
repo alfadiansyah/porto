@@ -10,6 +10,7 @@ export default function Navbar({ isDark, toggleTheme, scrollToSection, activeSec
     { label: 'About', id: 'about' },
     { label: 'Experience', id: 'experience' },
     { label: 'Projects', id: 'projects' },
+    { label: 'Services', id: 'services' },
     { label: 'Skills', id: 'skills' },
     { label: 'Education', id: 'education' },
     { label: 'Contact', id: 'contact' },

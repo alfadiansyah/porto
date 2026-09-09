@@ -401,5 +401,118 @@ export const portfolioData = {
       docxUrl: "/cv/CV_Giovanni_Alfadiansyah.docx",
       recommended: false
     }
+  ],
+
+  freelanceServices: [
+    {
+      tier: 1,
+      id: "starter-landing",
+      name: "Starter Landing Page / Compro",
+      tagline: "High-converting, responsive company profile & marketing landing page.",
+      priceIDR: "1.000.000",
+      priceUSD: "100",
+      periodIDR: "per project",
+      periodUSD: "per project",
+      deliveryTime: "3 – 5 Hari Kerja",
+      badge: null,
+      color: "blue",
+      features: [
+        "Modern Responsive Layout (Mobile, Tablet, Desktop)",
+        "Fast Performance & Core Web Vitals Optimization",
+        "Direct WhatsApp & Email Contact Integration",
+        "SEO Baseline & Social Media Meta Tags",
+        "Free Deployment Setup (Netlify / Vercel / GitHub Pages)",
+        "2x Iteration & Revision Cycles"
+      ],
+      idealFor: "UMKM, Personal Branding, Startup Launch, & Profile Perusahaan"
+    },
+    {
+      tier: 2,
+      id: "business-mvp",
+      name: "Business Portal / Web App MVP",
+      tagline: "Dynamic web application with database, authentication, and admin portal.",
+      priceIDR: "6.000.000",
+      priceUSD: "500",
+      periodIDR: "per project",
+      periodUSD: "per project",
+      deliveryTime: "1 – 2 Minggu",
+      badge: null,
+      color: "cyan",
+      features: [
+        "Full Stack Development (React.js / Next.js + Node.js / Laravel)",
+        "Database Architecture (PostgreSQL / MySQL)",
+        "User Authentication & Role-Based Access Control (RBAC)",
+        "Interactive Admin Dashboard & Data Management (CRUD)",
+        "RESTful API Integration & Form Validation",
+        "Source Code Handover + Technical Documentation"
+      ],
+      idealFor: "SaaS MVP, Internal Business Tool, Custom Catalog, & Multi-role Portals"
+    },
+    {
+      tier: 3,
+      id: "enterprise-erp",
+      name: "Enterprise ERP & Odoo Customization",
+      tagline: "Custom business logic, automated workflows, and ERP modules.",
+      priceIDR: "10.000.000",
+      priceUSD: "700",
+      periodIDR: "per project",
+      periodUSD: "per project",
+      deliveryTime: "2 – 3 Minggu",
+      badge: "Most Popular 🔥",
+      color: "emerald",
+      features: [
+        "Custom Odoo Python Modules (Sales, Purchase, Inventory, MRP, POS)",
+        "Automated Server Actions & Business Process Optimization",
+        "Manufacturing (MES) / Shop-floor Customization",
+        "Complex XML Views & Dynamic Reporting (QWeb / PDF)",
+        "Database Migration & Zero-Downtime Data Import",
+        "Linux VPS Deployment & Post-Launch Support (14 Days)"
+      ],
+      idealFor: "Perusahaan Manufaktur, Distributor, Supply Chain, & Bisnis Berkembang"
+    },
+    {
+      tier: 4,
+      id: "backend-cybersecurity",
+      name: "Backend & Cybersecurity Architecture",
+      tagline: "High-security Java 21 / Spring Boot microservices with banking-grade compliance.",
+      priceIDR: "15.000.000",
+      priceUSD: "1,250",
+      periodIDR: "per project",
+      periodUSD: "per project",
+      deliveryTime: "3 – 4 Minggu",
+      badge: "Enterprise Grade 🛡️",
+      color: "purple",
+      features: [
+        "Java 21 + Spring Boot 3 Microservices Architecture",
+        "Advanced Security: SSO ConnectIDN / OAuth2 / TOTP MFA (RFC 6238)",
+        "PostgreSQL Cluster + Flyway Migration Management",
+        "AWS S3 Encrypted Storage & Path-traversal Sanitization",
+        "High-Throughput Scalable REST APIs (99.9% Uptime SLA)",
+        "Automated Testing (JUnit 5, Testcontainers) & Swagger Contracts"
+      ],
+      idealFor: "Institusi Finansial/FinTech, Government LMS/Identity, & High-Traffic APIs"
+    },
+    {
+      tier: 5,
+      id: "dedicated-engineer",
+      name: "Dedicated Full Stack Engineer",
+      tagline: "Dedicated senior engineer & technical consultant for your development team.",
+      priceIDR: "20.000.000",
+      priceUSD: "1,500",
+      periodIDR: "per bulan",
+      periodUSD: "per month",
+      deliveryTime: "160 Jam / Bulan (Dedicated)",
+      badge: "Monthly Retainer 💎",
+      color: "amber",
+      features: [
+        "160 Jam Kerja Dedicated / Bulan (Full Stack Engineer & Tech Lead)",
+        "Agile / Scrum Sprint Participation & Daily Standup",
+        "Multi-stack Mastery: Java Spring Boot, C# .NET, Python Odoo, React, NestJS",
+        "System Architecture Design, Code Review, & Refactoring Legacy Code",
+        "CI/CD Pipeline Setup & DevOps Deployment (Docker / Linux VPS)",
+        "Priority Direct Communication (WhatsApp / Slack / Google Meet)"
+      ],
+      idealFor: "Startup Seri A+, Software House, & Perusahaan yang butuh Senior Dev Dedicated"
+    }
   ]
 };

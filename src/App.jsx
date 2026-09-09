@@ -6,6 +6,7 @@ import Skills from './components/Skills';
 import Education from './components/Education';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
+import Services from './components/Services';
 import ContactForm from './components/ContactForm';
 import SocialMagnet from './components/SocialMagnet';
 import { CheckCircle2, X } from 'lucide-react';
@@ -58,7 +59,7 @@ export default function App() {
 
   // Scroll spy
   useEffect(() => {
-    const sections = ['about', 'experience', 'projects', 'skills', 'education', 'contact'];
+    const sections = ['about', 'experience', 'projects', 'services', 'skills', 'education', 'contact'];
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 120;
       for (const sectionId of sections) {
@@ -124,12 +125,15 @@ export default function App() {
         {/* 6. Featured Projects with GlareHover */}
         <Projects />
 
-        {/* 7. Contact Form with GridPattern */}
+        {/* 7. Freelance Services & 5-Tier Pricing */}
+        <Services />
+
+        {/* 8. Contact Form with GridPattern */}
         <ContactForm
           onShowToast={showToast}
         />
 
-        {/* 8. Floating Bottom Social Dock */}
+        {/* 9. Floating Bottom Social Dock */}
         <SocialMagnet />
 
       </main>
