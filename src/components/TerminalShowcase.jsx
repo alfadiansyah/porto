@@ -232,7 +232,7 @@ export default function TerminalShowcase({ isDark, onOpenCvModal, onScrollToSect
                       : 'text-slate-400 hover:text-slate-200'
                   }`}
                 >
-                  ☕ Java 21 (BSSN Spring Security FAL2)
+                  Java 21 (BSSN Spring Security FAL2)
                 </button>
                 <button
                   onClick={() => setActiveCodeLang('python')}
@@ -242,7 +242,7 @@ export default function TerminalShowcase({ isDark, onOpenCvModal, onScrollToSect
                       : 'text-slate-400 hover:text-slate-200'
                   }`}
                 >
-                  🐍 Python (Odoo ERP MES Server Action)
+                  Python (Odoo ERP MES Server Action)
                 </button>
                 <button
                   onClick={() => setActiveCodeLang('typescript')}
@@ -252,7 +252,7 @@ export default function TerminalShowcase({ isDark, onOpenCvModal, onScrollToSect
                       : 'text-slate-400 hover:text-slate-200'
                   }`}
                 >
-                  🔷 TypeScript (NestJS RBAC Guard)
+                  TypeScript (NestJS RBAC Guard)
                 </button>
               </div>
 

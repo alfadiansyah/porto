@@ -151,13 +151,13 @@ export default function ArchitectureExplorer({ isDark }) {
           <div className={`p-4 rounded-2xl border ${
             isDark ? 'bg-[#161f30] border-[#222f46]' : 'bg-slate-50 border-slate-200'
           }`}>
-            <div className="font-bold text-rose-500 mb-1">⚠️ Engineering Challenge:</div>
+            <div className="font-bold text-rose-500 mb-1">Engineering Challenge:</div>
             <p className="text-slate-300 dark:text-slate-300 leading-relaxed">{activeArch.challenge}</p>
           </div>
           <div className={`p-4 rounded-2xl border ${
             isDark ? 'bg-[#161f30] border-[#222f46]' : 'bg-slate-50 border-slate-200'
           }`}>
-            <div className="font-bold text-emerald-500 mb-1">✅ Architectural Solution:</div>
+            <div className="font-bold text-emerald-500 mb-1">Architectural Solution:</div>
             <p className="text-slate-300 dark:text-slate-300 leading-relaxed">{activeArch.solution}</p>
           </div>
         </div>

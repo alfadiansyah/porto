@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
-import { cn } from "@/lib/utils";
-import { GridPattern } from "@/components/ui/grid-pattern";
-import { MessageSquare, Copy, Check, Send, Sparkles } from 'lucide-react';
+import { MessageSquare, Copy, Check, ArrowRight } from 'lucide-react';
+import { Highlighter } from "@/components/ui/highlighter";
 import { portfolioData } from '../data/portfolioData';
 
+/**
+ * Contact Section
+ * Engineered strictly under gpt-taste, high-end-visual-design, & minimalist-ui:
+ * - Double-Bezel (Doppelrand) Nested Card Architecture
+ * - 0% Emojis, 100% Solid 60-30-10 Palette
+ * - Button-in-Button kinetic submit CTA
+ */
 export default function ContactForm({ onShowToast }) {
   const { personalInfo } = portfolioData;
   const [form, setForm] = useState({ name: '', email: '', message: '' });
@@ -24,8 +30,8 @@ export default function ContactForm({ onShowToast }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Construct pre-filled WhatsApp message
-    const formattedText = `Hi Giovanni! 👋%0A%0A*Name:* ${encodeURIComponent(form.name)}%0A*Email:* ${encodeURIComponent(form.email)}%0A%0A*Message:*%0A${encodeURIComponent(form.message)}`;
+    // Construct pre-filled WhatsApp message (0% emojis)
+    const formattedText = `Hi Giovanni!%0A%0A*Name:* ${encodeURIComponent(form.name)}%0A*Email:* ${encodeURIComponent(form.email)}%0A%0A*Message:*%0A${encodeURIComponent(form.message)}`;
     const waUrl = `https://wa.me/6281395540904?text=${formattedText}`;
     
     // Open WhatsApp in new tab
@@ -36,140 +42,162 @@ export default function ContactForm({ onShowToast }) {
   };
 
   return (
-    <div id="contact" className="relative flex w-full items-center justify-center overflow-hidden bg-white dark:bg-[#0f1117] pt-16 pb-36 md:pt-24 md:pb-44 transition-colors">
-      <GridPattern
-        width={30}
-        height={30}
-        x={-1}
-        y={-1}
-        className={cn(
-          "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)]"
-        )}
-      />
-      <div className="relative z-10 container px-4 mx-auto">
+    <section id="contact" className="relative w-full py-28 md:py-36 bg-white dark:bg-[#0f1117] text-slate-900 dark:text-white transition-colors">
+      
+      <div className="container px-4 sm:px-6 mx-auto max-w-3xl">
         
-        {/* Centered Form Box */}
-        <div className="max-w-md mx-auto px-6 sm:px-8 py-8 bg-gray-50 dark:bg-[#161922] rounded-3xl border border-gray-200 dark:border-gray-800 shadow-xl">
-          
-          <div className="text-center mb-6">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white">
-              Contact Giovanni
-            </h2>
-            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-              Have a project or engineering opportunity? Let's connect directly via WhatsApp!
-            </p>
+        {/* Section Header */}
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-900/40 mb-3">
+            <span>[ 06 // GET IN TOUCH ]</span>
           </div>
-
-          {sent ? (
-            <div className="p-6 text-center space-y-3 bg-emerald-50 dark:bg-emerald-950/30 rounded-2xl border border-emerald-200 dark:border-emerald-800">
-              <div className="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center mx-auto">
-                <Check className="w-5 h-5" />
-              </div>
-              <h4 className="font-bold text-sm text-emerald-800 dark:text-emerald-300">WhatsApp Chat Opened!</h4>
-              <p className="text-xs text-gray-600 dark:text-gray-400">Your message has been formatted and transferred to WhatsApp.</p>
-              <button
-                onClick={() => {
-                  setSent(false);
-                  setForm({ name: '', email: '', message: '' });
-                }}
-                className="mt-2 text-xs font-bold text-emerald-600 dark:text-emerald-400 underline"
-              >
-                Send another message
-              </button>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label className="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1" htmlFor="name">Your Name</label>
-                <input
-                  className="w-full px-4 py-2.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-emerald-400 transition"
-                  placeholder="Enter your name"
-                  type="text"
-                  name="name"
-                  id="name"
-                  value={form.name}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1" htmlFor="email">Your Email</label>
-                <input
-                  className="w-full px-4 py-2.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-emerald-400 transition"
-                  placeholder="Enter your email address"
-                  name="email"
-                  id="email"
-                  type="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1" htmlFor="message">Your Message</label>
-                <textarea
-                  className="w-full px-4 py-2.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-emerald-400 transition resize-none"
-                  rows="3"
-                  placeholder="Describe your role or project..."
-                  name="message"
-                  id="message"
-                  value={form.message}
-                  onChange={handleChange}
-                  required
-                ></textarea>
-              </div>
-              <button
-                className="w-full bg-emerald-500 hover:bg-emerald-400 text-white font-bold py-3 px-4 rounded-xl shadow-md transition duration-300 text-xs uppercase tracking-wider flex items-center justify-center gap-2"
-                type="submit"
-              >
-                <MessageSquare className="w-4 h-4" /> Send via WhatsApp
-              </button>
-            </form>
-          )}
-
-          {/* Quick Actions */}
-          <div className="flex gap-2 mt-4">
-            <a
-              href="https://wa.me/6281395540904?text=Hi%20Giovanni,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect."
-              target="_blank"
-              rel="noreferrer"
-              className="flex-1 py-2.5 px-3 rounded-xl bg-emerald-600/15 hover:bg-emerald-600/25 text-emerald-600 dark:text-emerald-400 font-bold text-xs flex items-center justify-center gap-1.5 border border-emerald-500/30 transition"
-            >
-              <MessageSquare className="w-3.5 h-3.5" /> Quick Chat
-            </a>
-            <button
-              onClick={handleCopyEmail}
-              className="flex-1 py-2.5 px-3 rounded-xl bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 font-bold text-xs flex items-center justify-center gap-1.5 transition"
-            >
-              {copiedEmail ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />} Copy Email
-            </button>
-          </div>
-
+          <h2 className="text-4xl sm:text-5xl font-extrabold font-pixel">
+            <Highlighter action="underline" color="#FFD700">
+              Start a Conversation
+            </Highlighter>
+          </h2>
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2">
+            Have an enterprise project, software consulting inquiry, or engineering role? Connect directly via WhatsApp.
+          </p>
         </div>
 
-        {/* GitHub Button */}
+        {/* Doppelrand Double-Bezel Form Frame */}
+        <div className="rounded-[2rem] p-1.5 border border-slate-200 dark:border-white/10 bg-slate-100/50 dark:bg-white/[0.02]">
+          <div className="rounded-[calc(2rem-0.375rem)] p-7 sm:p-10 bg-white dark:bg-[#161b26] border border-slate-100 dark:border-white/5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
+
+            {sent ? (
+              <div className="p-8 text-center space-y-4 bg-emerald-50 dark:bg-emerald-950/30 rounded-2xl border border-emerald-200 dark:border-emerald-800">
+                <div className="w-12 h-12 rounded-full bg-emerald-600 text-white flex items-center justify-center mx-auto shadow-md">
+                  <Check className="w-6 h-6" />
+                </div>
+                <h4 className="font-bold text-base text-emerald-900 dark:text-emerald-200">WhatsApp Chat Dispatched</h4>
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+                  Your inquiry message has been formatted and transferred to WhatsApp.
+                </p>
+                <button
+                  onClick={() => {
+                    setSent(false);
+                    setForm({ name: '', email: '', message: '' });
+                  }}
+                  className="mt-2 text-xs font-bold text-emerald-600 dark:text-emerald-400 underline hover:text-emerald-500"
+                >
+                  Send another inquiry
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1.5" htmlFor="name">
+                    Your Name
+                  </label>
+                  <input
+                    className="w-full px-4 py-3 bg-slate-50 dark:bg-[#0f1117] text-slate-900 dark:text-white rounded-xl text-xs sm:text-sm border border-slate-200 dark:border-white/10 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                    placeholder="Enter your name"
+                    type="text"
+                    name="name"
+                    id="name"
+                    value={form.name}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1.5" htmlFor="email">
+                    Your Email Address
+                  </label>
+                  <input
+                    className="w-full px-4 py-3 bg-slate-50 dark:bg-[#0f1117] text-slate-900 dark:text-white rounded-xl text-xs sm:text-sm border border-slate-200 dark:border-white/10 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                    placeholder="Enter your corporate or personal email"
+                    name="email"
+                    id="email"
+                    type="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1.5" htmlFor="message">
+                    Project Scope or Message
+                  </label>
+                  <textarea
+                    className="w-full px-4 py-3 bg-slate-50 dark:bg-[#0f1117] text-slate-900 dark:text-white rounded-xl text-xs sm:text-sm border border-slate-200 dark:border-white/10 focus:outline-none focus:ring-2 focus:ring-blue-500 transition resize-none"
+                    rows="4"
+                    placeholder="Describe your architecture requirements, timeline, or engineering opportunity..."
+                    name="message"
+                    id="message"
+                    value={form.message}
+                    onChange={handleChange}
+                    required
+                  ></textarea>
+                </div>
+
+                {/* Button-in-Button Submit Button */}
+                <button
+                  className="w-full py-2.5 pl-5 pr-1.5 rounded-full font-bold text-xs sm:text-sm bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-between shadow-sm transition-all duration-200 group active:scale-98"
+                  type="submit"
+                >
+                  <span>Dispatch Message via WhatsApp</span>
+                  <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center transition-transform duration-200 group-hover:translate-x-0.5">
+                    <ArrowRight className="w-4 h-4 text-white" />
+                  </div>
+                </button>
+              </form>
+            )}
+
+            {/* Direct Quick Actions */}
+            <div className="flex flex-col sm:flex-row gap-3 mt-6 pt-6 border-t border-slate-100 dark:border-white/5">
+              <a
+                href={personalInfo.whatsapp}
+                target="_blank"
+                rel="noreferrer"
+                className="flex-1 py-2.5 px-4 rounded-full bg-slate-50 dark:bg-[#0f1117] hover:bg-slate-100 dark:hover:bg-white/5 text-slate-800 dark:text-slate-200 font-bold text-xs flex items-center justify-center gap-2 border border-slate-200 dark:border-white/10 transition active:scale-98"
+              >
+                <MessageSquare className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+                <span>Quick WhatsApp Chat</span>
+              </a>
+
+              <button
+                onClick={handleCopyEmail}
+                className="flex-1 py-2.5 px-4 rounded-full bg-slate-50 dark:bg-[#0f1117] hover:bg-slate-100 dark:hover:bg-white/5 text-slate-800 dark:text-slate-200 font-bold text-xs flex items-center justify-center gap-2 border border-slate-200 dark:border-white/10 transition active:scale-98"
+              >
+                {copiedEmail ? (
+                  <>
+                    <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+                    <span>Email Copied</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
+                    <span>Copy g.alfadiansyah@gmail.com</span>
+                  </>
+                )}
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        {/* GitHub Monogram Badge */}
         <div className="flex justify-center mt-8">
           <a
             href={personalInfo.github}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="View on GitHub"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-mono font-bold bg-slate-100 dark:bg-[#161b26] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10 hover:border-slate-400 dark:hover:border-white/30 transition-all shadow-xs"
           >
-            <button
-              className="items-center justify-center whitespace-nowrap rounded-xl text-xs font-bold transition-all hover:scale-105 active:scale-95 px-5 py-2.5 inline-flex bg-gray-900 text-white shadow-lg border border-gray-700"
-              type="button"
-            >
-              <div className="flex items-center">
-                <svg className="size-4 mr-2" viewBox="0 0 438.549 438.549" fill="currentColor">
-                  <path d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 01-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z" />
-                </svg>
-                <span>GitHub @alfadiansyah</span>
-              </div>
-            </button>
+            <svg className="size-4" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            <span>github.com/alfadiansyah</span>
           </a>
         </div>
 
       </div>
-    </div>
+
+    </section>
   );
 }
