@@ -1,13 +1,13 @@
-import React, { useEffect, useRef } from 'react';
-import Spline from '@splinetool/react-spline';
-import { ArrowRight, Download, MessageSquare, Briefcase, ArrowUpRight } from 'lucide-react';
+import React, { useRef } from 'react';
+import { ArrowRight, Download, MessageSquare, Briefcase, ArrowUpRight, Terminal, Shield, Layers, Sparkles } from 'lucide-react';
 import RotatingText from './RotatingText';
 import { WordRotate } from "@/components/ui/word-rotate";
 
 /**
- * 3D Spline Cinematic Hero Section
- * Fully engineered under gpt-taste & high-end-visual-design specifications:
- * - 2-Line Iron Rule on Heading with ultra-wide container
+ * High-End Minimalist Editorial Hero Section
+ * Fully engineered under gpt-taste, high-end-visual-design, & minimalist-ui:
+ * - 0% 3D Distractions / No Robot
+ * - 2-Line Max Iron Rule on Heading with ultra-wide container
  * - Double-Bezel nested Availability Pill
  * - Button-in-Button kinetic CTA architecture
  * - 0% Emojis, 100% Solid 60-30-10 palette
@@ -26,36 +26,6 @@ export default function Hero() {
   
   const greetings = ["Hello", "Halo", "Ciao", "Hola"];
 
-  // Secondary DOM / Shadow DOM cleanup for Spline badge
-  useEffect(() => {
-    const removeWatermark = () => {
-      const watermarks = document.querySelectorAll(
-        '#spline-watermark, #logo, a[href*="spline.design"], [data-spline-watermark], [class*="watermark"], [id*="watermark"]'
-      );
-      watermarks.forEach((el) => {
-        el.style.display = 'none';
-        el.style.visibility = 'hidden';
-        el.style.opacity = '0';
-        try { el.remove(); } catch (e) {}
-      });
-
-      document.querySelectorAll('*').forEach((node) => {
-        if (node.shadowRoot) {
-          const badge = node.shadowRoot.querySelector('#logo, a[href*="spline.design"], #spline-watermark, [class*="watermark"], [id*="watermark"]');
-          if (badge) {
-            badge.style.display = 'none';
-            badge.style.opacity = '0';
-            try { badge.remove(); } catch (e) {}
-          }
-        }
-      });
-    };
-
-    removeWatermark();
-    const interval = setInterval(removeWatermark, 100);
-    return () => clearInterval(interval);
-  }, []);
-
   const scrollToServices = (e) => {
     e.preventDefault();
     const el = document.getElementById('services');
@@ -65,48 +35,38 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" ref={containerRef} className="relative w-full min-h-[100dvh] overflow-hidden bg-black flex items-center justify-center">
+    <section id="hero" ref={containerRef} className="relative w-full min-h-[92dvh] md:min-h-screen bg-[#0a0c10] text-white flex items-center justify-center overflow-hidden transition-colors">
       
-      {/* 1. Symmetrical 3D Spline Background Canvas */}
-      <div className="absolute inset-0 z-10 w-full h-full overflow-hidden pointer-events-auto flex items-center justify-center">
-        <div className="absolute -top-[120px] -bottom-[120px] -left-[320px] -right-[320px] w-[calc(100%+640px)] h-[calc(100%+240px)]">
-          <Spline
-            scene="https://prod.spline.design/9xuF1oRA5poA131s/scene.splinecode"
-            aria-label="Interactive 3D animation"
-            onLoad={(splineApp) => {
-              try {
-                if (splineApp && splineApp._scene) {
-                  splineApp._scene.traverse((obj) => {
-                    if (obj.name && /watermark|logo|spline/i.test(obj.name)) {
-                      obj.visible = false;
-                    }
-                  });
-                }
-              } catch (e) {}
-            }}
-          />
-        </div>
-      </div>
+      {/* 1. Subtle Precision Engineering Grid Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
-      {/* 2. Overlay Cinematic Content (Ultra-Wide Container, 2-Line Heading Rule) */}
-      <div className="relative z-20 flex items-center justify-center w-full h-full px-4 sm:px-6 md:px-12 py-32 text-center bg-black/40 pointer-events-none">
-        <div className="w-full max-w-5xl pointer-events-auto">
+      {/* 2. Concentric Ambient Focal Lighting (Solid 60-30-10) */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-blue-600/10 blur-[140px] rounded-full pointer-events-none" />
+
+      {/* 3. Hero Content Container (Ultra-Wide, Editorial Typography) */}
+      <div className="relative z-10 flex flex-col items-center justify-center w-full px-4 sm:px-6 md:px-12 py-32 md:py-40 text-center">
+        <div className="w-full max-w-5xl">
           
-          {/* Eyebrow Status Pill (Double-Bezel) */}
-          <div className="flex justify-center mb-6">
-            <a
-              href="#services"
-              onClick={scrollToServices}
-              className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs font-semibold bg-[#161b26]/90 border border-white/10 text-slate-300 backdrop-blur-xl hover:border-blue-500 hover:text-white transition-all shadow-md active:scale-98"
-            >
-              <span className="w-2 h-2 rounded-full bg-emerald-400" />
-              <span className="tracking-wide">Available for Freelance & Technical Consulting</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-slate-400" />
-            </a>
+          {/* Double-Bezel Availability Pill */}
+          <div className="flex justify-center mb-8">
+            <div className="rounded-full p-1 border border-white/10 bg-[#161b26]/80 backdrop-blur-xl shadow-lg">
+              <a
+                href="#services"
+                onClick={scrollToServices}
+                className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs font-semibold bg-[#0f1117] text-slate-300 hover:text-white transition-all active:scale-98"
+              >
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span className="tracking-wide">Available for Freelance & Technical Consulting</span>
+                <ArrowUpRight className="w-3.5 h-3.5 text-slate-400" />
+              </a>
+            </div>
           </div>
 
           {/* 2-Line Max Editorial Typography */}
-          <h1 className="font-pixel text-4xl sm:text-6xl md:text-7xl font-black text-white tracking-tight leading-[1.08] [text-shadow:_0_4px_12px_rgb(0_0_0_/_60%)]">
+          <h1 className="font-pixel text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white tracking-tight leading-[1.06]">
             <span className="inline-flex items-center gap-x-2">
               <WordRotate words={greetings} />
               <span>, I&apos;m</span>
@@ -115,14 +75,30 @@ export default function Hero() {
           </h1>
 
           {/* Subheading Skills Ticker */}
-          <div className="flex justify-center mt-5">
+          <div className="flex justify-center mt-6">
             <RotatingText
               texts={skills}
-              mainClassName="text-base sm:text-xl md:text-2xl font-bold text-yellow-300 [text-shadow:_0_2px_6px_rgb(0_0_0_/_60%)] tracking-tight"
+              mainClassName="text-base sm:text-xl md:text-2xl font-bold text-yellow-300 tracking-tight"
               splitLevelClassName="overflow-hidden"
               staggerDuration={0.08}
               staggerFrom="last"
             />
+          </div>
+
+          {/* Monospace Architecture Badges */}
+          <div className="flex flex-wrap items-center justify-center gap-2 mt-6 max-w-2xl mx-auto">
+            <span className="px-3 py-1 rounded-lg text-xs font-mono font-semibold bg-[#161b26] border border-white/10 text-slate-300">
+              Java 21 Spring Boot
+            </span>
+            <span className="px-3 py-1 rounded-lg text-xs font-mono font-semibold bg-[#161b26] border border-white/10 text-slate-300">
+              SSO ConnectIDN FAL2
+            </span>
+            <span className="px-3 py-1 rounded-lg text-xs font-mono font-semibold bg-[#161b26] border border-white/10 text-slate-300">
+              Bank Mega CCBM 99.9% SLA
+            </span>
+            <span className="px-3 py-1 rounded-lg text-xs font-mono font-semibold bg-[#161b26] border border-white/10 text-slate-300">
+              Odoo ERP MES
+            </span>
           </div>
         
           {/* Kinetic Button-in-Button CTA Suite */}
