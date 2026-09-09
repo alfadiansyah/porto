@@ -88,15 +88,15 @@ export default function Hero() {
         <div className="max-w-2xl pointer-events-auto">
           
           {/* Availability & Freelance Badge */}
-          <div className="flex justify-center mb-3">
+          <div className="flex justify-center mb-4">
             <a
               href="#services"
               onClick={scrollToServices}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-blue-500/20 border border-cyan-400/40 text-cyan-300 backdrop-blur-md hover:bg-blue-500/30 hover:scale-105 transition-all shadow-lg"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-[#161b26]/90 border border-blue-500/50 text-blue-400 backdrop-blur-md hover:bg-blue-600 hover:text-white transition-all shadow-md"
             >
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+              <span className="w-2 h-2 rounded-full bg-emerald-400" />
               <span>Available for Freelance & Retainer</span>
-              <Sparkles size={13} className="text-yellow-300" />
+              <Sparkles size={13} className="text-yellow-400" />
             </a>
           </div>
 
@@ -120,19 +120,20 @@ export default function Hero() {
             />
           </div>
         
-          {/* Call-to-action buttons */}
+          {/* Call-to-action buttons (60-30-10 solid colors, no gradients) */}
           <div className="flex flex-wrap justify-center gap-3 mt-8">
             
-            {/* Freelance Services Button */}
+            {/* 10% Primary Accent: Freelance Services */}
             <a
               href="#services"
               onClick={scrollToServices}
-              className="inline-flex items-center gap-2 px-5 py-3 text-sm sm:text-base font-bold text-white transition-all duration-300 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-xl shadow-lg shadow-blue-500/30 pointer-events-auto hover:opacity-95 hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-2 px-5 py-3 text-sm sm:text-base font-bold text-white transition-all duration-200 bg-blue-600 hover:bg-blue-500 rounded-xl shadow-md pointer-events-auto hover:scale-105 active:scale-95"
             >
               <Briefcase size={18} />
               Freelance Services
             </a>
 
+            {/* 30% Structural Secondary: View My Work */}
             <a
               href="#projects"
               onClick={e => {
@@ -142,29 +143,30 @@ export default function Hero() {
                   el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
               }}
-              className="inline-flex items-center gap-2 px-5 py-3 text-sm sm:text-base font-bold text-black transition-all duration-300 bg-white rounded-xl shadow-lg pointer-events-auto hover:bg-gray-100 hover:scale-105"
+              className="inline-flex items-center gap-2 px-5 py-3 text-sm sm:text-base font-bold text-slate-900 transition-all duration-200 bg-white rounded-xl shadow-md pointer-events-auto hover:bg-slate-100 hover:scale-105"
             >
               View My Work
               <ArrowRight size={18} />
             </a>
             
-            {/* Direct 1-Click CV Download */}
+            {/* 30% Secondary Outline: Download CV */}
             <a
               href="./cv/CV_Giovanni_Alfadiansyah.pdf"
               download="CV_Giovanni_Alfadiansyah.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-3 text-sm sm:text-base font-bold text-white transition-all duration-300 bg-black/40 border border-white/80 backdrop-blur-sm rounded-xl shadow-lg pointer-events-auto hover:bg-white hover:text-black hover:scale-105"
+              className="inline-flex items-center gap-2 px-5 py-3 text-sm sm:text-base font-bold text-slate-200 transition-all duration-200 bg-[#161b26]/90 border border-slate-600 rounded-xl shadow-md pointer-events-auto hover:bg-slate-700 hover:text-white hover:scale-105"
             >
               <Download size={18} />
               Download CV
             </a>
             
+            {/* Action Accent: WhatsApp */}
             <a
               href="https://wa.me/6281395540904?text=Hi%20Giovanni,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-3 text-sm sm:text-base font-bold text-emerald-400 transition-all duration-300 bg-emerald-950/60 border border-emerald-500/50 backdrop-blur-sm rounded-xl shadow-lg pointer-events-auto hover:bg-emerald-500 hover:text-white hover:scale-105"
+              className="inline-flex items-center gap-2 px-4 py-3 text-sm sm:text-base font-bold text-white transition-all duration-200 bg-emerald-600 hover:bg-emerald-500 rounded-xl shadow-md pointer-events-auto hover:scale-105"
             >
               <MessageSquare size={18} />
               WhatsApp
