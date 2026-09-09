@@ -496,7 +496,7 @@ export const portfolioData = {
       tier: 5,
       id: "dedicated-engineer",
       name: "Dedicated Full Stack Engineer",
-      tagline: "Dedicated senior engineer & technical consultant for your development team.",
+      tagline: "Dedicated full stack engineer & technical consultant for your development team.",
       priceIDR: "20.000.000",
       priceUSD: "1,500",
       periodIDR: "per bulan",
@@ -505,14 +505,14 @@ export const portfolioData = {
       badge: "Monthly Retainer 💎",
       color: "amber",
       features: [
-        "160 Jam Kerja Dedicated / Bulan (Full Stack Engineer & Tech Lead)",
+        "160 Jam Kerja Dedicated / Bulan (Full Stack Engineer & Tech Consultant)",
         "Agile / Scrum Sprint Participation & Daily Standup",
         "Multi-stack Mastery: Java Spring Boot, C# .NET, Python Odoo, React, NestJS",
         "System Architecture Design, Code Review, & Refactoring Legacy Code",
         "CI/CD Pipeline Setup & DevOps Deployment (Docker / Linux VPS)",
         "Priority Direct Communication (WhatsApp / Slack / Google Meet)"
       ],
-      idealFor: "Startup Seri A+, Software House, & Perusahaan yang butuh Senior Dev Dedicated"
+      idealFor: "Startup Seri A+, Software House, & Perusahaan yang butuh Dedicated Full Stack Engineer"
     }
   ]
 };
