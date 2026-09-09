@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import Spline from '@splinetool/react-spline';
-import { ArrowRight, Download, MessageSquare } from 'lucide-react';
+import { ArrowRight, Download, MessageSquare, Briefcase, Sparkles } from 'lucide-react';
 import RotatingText from './RotatingText';
 import { WordRotate } from "@/components/ui/word-rotate";
 
 /**
- * 3D Spline Hero Section with 1-Click Direct CV Download.
+ * 3D Spline Hero Section with 1-Click Direct CV Download & Freelance Services CTA.
  */
 export default function Hero() {
   const containerRef = useRef(null);
@@ -51,6 +51,14 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, []);
 
+  const scrollToServices = (e) => {
+    e.preventDefault();
+    const el = document.getElementById('services');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <section id="hero" ref={containerRef} className="relative w-full h-screen overflow-hidden bg-black">
       
@@ -77,8 +85,21 @@ export default function Hero() {
 
       {/* 2. Overlay Content */}
       <div className="relative z-20 flex items-center justify-center w-full h-full p-8 text-center bg-black/35 pointer-events-none sm:p-16 md:p-24">
-        <div className="max-w-xl pointer-events-auto">
+        <div className="max-w-2xl pointer-events-auto">
           
+          {/* Availability & Freelance Badge */}
+          <div className="flex justify-center mb-3">
+            <a
+              href="#services"
+              onClick={scrollToServices}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-blue-500/20 border border-cyan-400/40 text-cyan-300 backdrop-blur-md hover:bg-blue-500/30 hover:scale-105 transition-all shadow-lg"
+            >
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+              <span>Available for Freelance & Retainer</span>
+              <Sparkles size={13} className="text-yellow-300" />
+            </a>
+          </div>
+
           <h1 className="font-pixel flex items-center justify-center gap-x-2 text-4xl font-extrabold text-white sm:text-6xl md:text-7xl [text-shadow:_0_3px_6px_rgb(0_0_0_/_50%)]">
             <WordRotate words={greetings} />
             {", I'm"}
@@ -101,6 +122,17 @@ export default function Hero() {
         
           {/* Call-to-action buttons */}
           <div className="flex flex-wrap justify-center gap-3 mt-8">
+            
+            {/* Freelance Services Button */}
+            <a
+              href="#services"
+              onClick={scrollToServices}
+              className="inline-flex items-center gap-2 px-5 py-3 text-sm sm:text-base font-bold text-white transition-all duration-300 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-xl shadow-lg shadow-blue-500/30 pointer-events-auto hover:opacity-95 hover:scale-105 active:scale-95"
+            >
+              <Briefcase size={18} />
+              Freelance Services
+            </a>
+
             <a
               href="#projects"
               onClick={e => {
@@ -110,7 +142,7 @@ export default function Hero() {
                   el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
               }}
-              className="inline-flex items-center gap-2 px-6 py-3 text-sm sm:text-base font-bold text-black transition-all duration-300 bg-white rounded-xl shadow-lg pointer-events-auto hover:bg-gray-100 hover:scale-105"
+              className="inline-flex items-center gap-2 px-5 py-3 text-sm sm:text-base font-bold text-black transition-all duration-300 bg-white rounded-xl shadow-lg pointer-events-auto hover:bg-gray-100 hover:scale-105"
             >
               View My Work
               <ArrowRight size={18} />
@@ -122,7 +154,7 @@ export default function Hero() {
               download="CV_Giovanni_Alfadiansyah.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 text-sm sm:text-base font-bold text-white transition-all duration-300 bg-black/40 border border-white/80 backdrop-blur-sm rounded-xl shadow-lg pointer-events-auto hover:bg-white hover:text-black hover:scale-105"
+              className="inline-flex items-center gap-2 px-5 py-3 text-sm sm:text-base font-bold text-white transition-all duration-300 bg-black/40 border border-white/80 backdrop-blur-sm rounded-xl shadow-lg pointer-events-auto hover:bg-white hover:text-black hover:scale-105"
             >
               <Download size={18} />
               Download CV
@@ -132,7 +164,7 @@ export default function Hero() {
               href="https://wa.me/6281395540904?text=Hi%20Giovanni,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-3 text-sm sm:text-base font-bold text-emerald-400 transition-all duration-300 bg-emerald-950/60 border border-emerald-500/50 backdrop-blur-sm rounded-xl shadow-lg pointer-events-auto hover:bg-emerald-500 hover:text-white hover:scale-105"
+              className="inline-flex items-center gap-2 px-4 py-3 text-sm sm:text-base font-bold text-emerald-400 transition-all duration-300 bg-emerald-950/60 border border-emerald-500/50 backdrop-blur-sm rounded-xl shadow-lg pointer-events-auto hover:bg-emerald-500 hover:text-white hover:scale-105"
             >
               <MessageSquare size={18} />
               WhatsApp
