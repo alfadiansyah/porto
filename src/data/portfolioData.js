@@ -458,7 +458,7 @@ export const portfolioData = {
       periodIDR: "per project",
       periodUSD: "per project",
       deliveryTime: "2 – 3 Weeks",
-      badge: "Most Popular 🔥",
+      badge: "Most Popular",
       color: "emerald",
       features: [
         "Custom Odoo Python Modules (Sales, Purchase, Inventory, MRP, POS)",
@@ -480,7 +480,7 @@ export const portfolioData = {
       periodIDR: "per project",
       periodUSD: "per project",
       deliveryTime: "3 – 4 Weeks",
-      badge: "Enterprise Grade 🛡️",
+      badge: "Enterprise Grade",
       color: "purple",
       features: [
         "Java 21 + Spring Boot 3 Microservices Architecture",
@@ -502,7 +502,7 @@ export const portfolioData = {
       periodIDR: "per month",
       periodUSD: "per month",
       deliveryTime: "160 Hours / Month (Dedicated)",
-      badge: "Monthly Retainer 💎",
+      badge: "Monthly Retainer",
       color: "amber",
       features: [
         "160 Dedicated Working Hours / Month (Full Stack Engineer & Tech Consultant)",

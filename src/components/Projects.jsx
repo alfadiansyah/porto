@@ -201,7 +201,7 @@ export default function Projects() {
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-extrabold font-pixel inline-block">
             <Highlighter action="underline" color="#FFD700">
-              Featured Projects 🚀
+              Featured Projects
             </Highlighter>
           </h2>
           <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-2">
@@ -269,12 +269,12 @@ export default function Projects() {
 
             <div className="space-y-4 text-xs sm:text-sm">
               <div className="p-4 rounded-2xl bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-900/30">
-                <div className="font-bold text-red-600 dark:text-red-400 mb-1">⚠️ The Engineering Challenge:</div>
+                <div className="font-bold text-red-600 dark:text-red-400 mb-1">The Engineering Challenge:</div>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{activeModalProject.challenge}</p>
               </div>
 
               <div className="p-4 rounded-2xl bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-900/30">
-                <div className="font-bold text-emerald-600 dark:text-emerald-400 mb-1">✅ Architectural Solution:</div>
+                <div className="font-bold text-emerald-600 dark:text-emerald-400 mb-1">Architectural Solution:</div>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{activeModalProject.solution}</p>
               </div>
 

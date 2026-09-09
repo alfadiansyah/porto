@@ -62,7 +62,7 @@ export default function Services() {
       ? `$${service.priceUSD} USD (${service.periodUSD})` 
       : `Rp ${service.priceIDR} (${service.periodIDR})`;
 
-    const message = `Hi Giovanni! 👋%0A%0AI came across your portfolio and would like to inquire about the following service package:%0A%0A*Service:* Tier ${service.tier} - ${encodeURIComponent(service.name)}%0A*Estimated Rate:* ${encodeURIComponent(priceText)}%0A*Estimated Timeline:* ${encodeURIComponent(service.deliveryTime)}%0A%0ACould we schedule a quick discussion on the project requirements? Thank you!`;
+    const message = `Hi Giovanni!%0A%0AI came across your portfolio and would like to inquire about the following service package:%0A%0A*Service:* Tier ${service.tier} - ${encodeURIComponent(service.name)}%0A*Estimated Rate:* ${encodeURIComponent(priceText)}%0A*Estimated Timeline:* ${encodeURIComponent(service.deliveryTime)}%0A%0ACould we schedule a quick discussion on the project requirements? Thank you!`;
 
     const waUrl = `https://wa.me/6281395540904?text=${message}`;
     window.open(waUrl, '_blank', 'noopener,noreferrer');
@@ -78,7 +78,7 @@ export default function Services() {
           <div className="inline-block mb-3">
             <h2 className="text-4xl sm:text-5xl font-extrabold font-pixel">
               <Highlighter action="underline" color="#FFD700">
-                Freelance Services & Tiers 💼
+                Freelance Services & Tiers
               </Highlighter>
             </h2>
           </div>
@@ -89,7 +89,7 @@ export default function Services() {
           {/* Currency Switcher Toggle (Solid 60-30-10 Colors) */}
           <div className="flex items-center justify-center gap-3 mt-8">
             <span className={`text-xs sm:text-sm font-bold transition-colors ${currency === 'IDR' ? 'text-blue-600 dark:text-blue-400 font-extrabold' : 'text-slate-500 dark:text-slate-400'}`}>
-              🇮🇩 Indonesian Rupiah (IDR)
+              Indonesian Rupiah (IDR)
             </span>
 
             <button
@@ -107,7 +107,7 @@ export default function Services() {
             </button>
 
             <span className={`text-xs sm:text-sm font-bold transition-colors ${currency === 'USD' ? 'text-blue-600 dark:text-blue-400 font-extrabold' : 'text-slate-500 dark:text-slate-400'}`}>
-              🌎 Global Currency (USD)
+              Global Currency (USD)
             </span>
           </div>
 
@@ -228,7 +228,7 @@ export default function Services() {
         {/* Custom Project Note (Solid Secondary Panel) */}
         <div className="mt-12 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#161b26] text-center max-w-2xl mx-auto">
           <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">
-            Need a Custom Project or Enterprise Architecture? 💡
+            Need a Custom Project or Enterprise Architecture?
           </h4>
           <p className="text-xs text-slate-600 dark:text-slate-400 mb-4">
             Project scope and engineering resources can be tailored to match your specific budget, SLA, and technical requirements.
