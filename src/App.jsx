@@ -2,13 +2,12 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import Skills from './components/Skills';
-import Education from './components/Education';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Services from './components/Services';
-import ContactForm from './components/ContactForm';
-import SocialMagnet from './components/SocialMagnet';
+import Skills from './components/Skills';
+import Education from './components/Education';
+import Contact from './components/Contact';
 import { CheckCircle2, X } from 'lucide-react';
 
 export default function App() {
@@ -80,7 +79,7 @@ export default function App() {
 
   return (
     <div className={`min-h-screen font-sans ${
-      isDark ? 'bg-[#0f1117] text-white' : 'bg-white text-black'
+      isDark ? 'bg-[#0f1117] text-white' : 'bg-white text-slate-900'
     }`}>
       
       {/* Toast Alert */}
@@ -105,38 +104,38 @@ export default function App() {
       {/* Main Single Page Content */}
       <main>
         
-        {/* 1. Spline 3D Hero Section */}
+        {/* 1. Minimalist Precision Hero Section */}
         <Hero />
 
-        {/* 2. About Me with ScrollReveal & Highlighter */}
+        {/* 2. About Me Bento Grid */}
         <About />
 
-        {/* 3. Tech Stack with Infinite Velocity Ticker */}
-        <Skills />
+        {/* 3. Work Experience Timeline */}
+        <Experience />
 
-        {/* 4. Qualifications with Interactive File Tree */}
-        <Education />
-
-        {/* 5. Work Experience Timeline */}
-        <Experience
-          isDark={isDark}
-        />
-
-        {/* 6. Featured Projects with GlareHover */}
+        {/* 4. Featured Projects & Case Studies */}
         <Projects />
 
-        {/* 7. Freelance Services & 5-Tier Pricing */}
+        {/* 5. Freelance Services & 5-Tier Pricing Suite */}
         <Services />
 
-        {/* 8. Contact Form with GridPattern */}
-        <ContactForm
-          onShowToast={showToast}
-        />
+        {/* 6. Tech Stack Breakdown */}
+        <Skills />
 
-        {/* 9. Floating Bottom Social Dock */}
-        <SocialMagnet />
+        {/* 7. Education & Credentials */}
+        <Education />
+
+        {/* 8. Contact Form & WhatsApp Dispatch */}
+        <Contact onShowToast={showToast} />
 
       </main>
+
+      {/* Footer */}
+      <footer className="w-full py-8 border-t border-slate-200 dark:border-white/10 text-center text-xs font-mono text-slate-500 dark:text-slate-400 bg-white dark:bg-[#0a0c10]">
+        <div className="container mx-auto px-4">
+          <p>© {new Date().getFullYear()} Giovanni Alfadiansyah. Engineered with React & Tailwind CSS.</p>
+        </div>
+      </footer>
 
     </div>
   );

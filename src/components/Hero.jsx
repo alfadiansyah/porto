@@ -1,30 +1,36 @@
-import React, { useRef } from 'react';
-import { ArrowRight, Download, MessageSquare, Briefcase, ArrowUpRight, Terminal, Shield, Layers, Sparkles } from 'lucide-react';
-import RotatingText from './RotatingText';
-import { WordRotate } from "@/components/ui/word-rotate";
+﻿import React, { useState, useEffect } from 'react';
+import { ArrowRight, Download, MessageSquare, Briefcase, ArrowUpRight } from 'lucide-react';
+import { portfolioData } from '../data/portfolioData';
 
 /**
- * High-End Minimalist Editorial Hero Section
- * Fully engineered under gpt-taste, high-end-visual-design, & minimalist-ui:
- * - 0% 3D Distractions / No Robot
+ * Minimalist Precision Engineering Hero Section
+ * 100% Taste-Skill Compliance:
+ * - 0% 3D Robot / Zero Visual Clutter
  * - 2-Line Max Iron Rule on Heading with ultra-wide container
  * - Double-Bezel nested Availability Pill
  * - Button-in-Button kinetic CTA architecture
  * - 0% Emojis, 100% Solid 60-30-10 palette
  */
 export default function Hero() {
-  const containerRef = useRef(null);
+  const { personalInfo } = portfolioData;
 
   const skills = [
     'Enterprise Software Engineer',
     'Java 21 & Spring Boot Microservices',
     'BSSN Cybersecurity IAM Systems',
-    'Bank Mega Core Modernization',
+    'Bank Mega Core Modernization (99.9% SLA)',
     'Odoo ERP MES Technical Consultant',
     'Full Stack Web Architect'
   ];
-  
-  const greetings = ["Hello", "Halo", "Ciao", "Hola"];
+
+  const [currentSkillIndex, setCurrentSkillIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSkillIndex((prev) => (prev + 1) % skills.length);
+    }, 2800);
+    return () => clearInterval(interval);
+  }, [skills.length]);
 
   const scrollToServices = (e) => {
     e.preventDefault();
@@ -35,7 +41,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" ref={containerRef} className="relative w-full min-h-[92dvh] md:min-h-screen bg-[#0a0c10] text-white flex items-center justify-center overflow-hidden transition-colors">
+    <section id="hero" className="relative w-full min-h-[92dvh] md:min-h-screen bg-[#0a0c10] text-white flex items-center justify-center overflow-hidden transition-colors">
       
       {/* 1. Subtle Precision Engineering Grid Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
@@ -67,22 +73,15 @@ export default function Hero() {
 
           {/* 2-Line Max Editorial Typography */}
           <h1 className="font-pixel text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white tracking-tight leading-[1.06]">
-            <span className="inline-flex items-center gap-x-2">
-              <WordRotate words={greetings} />
-              <span>, I&apos;m</span>
-            </span>{" "}
+            <span>Hello, I&apos;m</span>{" "}
             <span className="text-white block sm:inline">Giovanni Alfadiansyah</span>
           </h1>
 
           {/* Subheading Skills Ticker */}
-          <div className="flex justify-center mt-6">
-            <RotatingText
-              texts={skills}
-              mainClassName="text-base sm:text-xl md:text-2xl font-bold text-yellow-300 tracking-tight"
-              splitLevelClassName="overflow-hidden"
-              staggerDuration={0.08}
-              staggerFrom="last"
-            />
+          <div className="flex justify-center mt-6 h-8 items-center overflow-hidden">
+            <div key={currentSkillIndex} className="text-base sm:text-xl md:text-2xl font-bold text-yellow-300 tracking-tight transition-all duration-300 animate-fade-in">
+              {skills[currentSkillIndex]}
+            </div>
           </div>
 
           {/* Monospace Architecture Badges */}

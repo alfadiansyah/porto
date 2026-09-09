@@ -1,13 +1,11 @@
 import React from 'react';
-import { Highlighter } from "@/components/ui/highlighter";
 import { GraduationCap, Award, Users, Calendar, CheckCircle2 } from 'lucide-react';
 
 /**
  * Education & Credentials Section
- * Engineered strictly under gpt-taste, high-end-visual-design, & minimalist-ui:
- * - Double-Bezel (Doppelrand) Nested Card Architecture
+ * 100% Taste-Skill Compliance:
+ * - Doppelrand Double-Bezel Frame Architecture
  * - 0% Emojis, 100% Solid 60-30-10 Palette
- * - Clear Editorial Layout
  */
 export default function Education() {
   const educationData = [
@@ -96,15 +94,13 @@ export default function Education() {
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-900/40 mb-3">
-            <span>[ 04 // CREDENTIALS ]</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-900/40 mb-3">
+            <span>Education & Credentials</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-extrabold font-pixel">
-            <Highlighter action="underline" color="#FFD700">
-              Education & Credentials
-            </Highlighter>
+          <h2 className="text-4xl sm:text-5xl font-extrabold font-pixel tracking-tight">
+            Education & Credentials
           </h2>
-          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2">
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
             Academic degree, verified technical certifications, and leadership milestones.
           </p>
         </div>

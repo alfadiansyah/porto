@@ -1,55 +1,12 @@
 import React, { useState } from 'react';
-import { VelocityText } from './ScrollVelocity';
-import { 
-  Java, 
-  SpringBoot, 
-  PostgreSQL, 
-  Docker, 
-  Odoo, 
-  ReactLogo, 
-  Nextjs, 
-  Javascript, 
-  Typescript, 
-  Node, 
-  Git, 
-  Postman, 
-  Mysql, 
-  Html, 
-  Css, 
-  MongoDB, 
-  Php 
-} from './SkillLogos';
-import { Highlighter } from "@/components/ui/highlighter";
 import { portfolioData } from '../data/portfolioData';
 
-const skillsRow1 = [
-  <Java key="java" />,
-  <SpringBoot key="spring" />,
-  <PostgreSQL key="postgresql" />,
-  <Docker key="docker" />,
-  <Odoo key="odoo" />,
-  <ReactLogo key="react" />,
-  <Nextjs key="nextjs" />,
-  <Javascript key="js" />,
-];
-
-const skillsRow2 = [
-  <Typescript key="ts" />,
-  <Node key="node" />,
-  <Postman key="postman" />,
-  <Git key="git" />,
-  <Mysql key="mysql" />,
-  <MongoDB key="mongodb" />,
-  <Php key="php" />,
-  <Html key="html" />,
-];
-
 /**
- * Tech Stack & Skills Section
- * Engineered strictly under gpt-taste, high-end-visual-design, & minimalist-ui:
- * - Double-Bezel (Doppelrand) Nested Card Architecture
+ * Tech Stack & Tooling Section
+ * 100% Taste-Skill Compliance:
+ * - Doppelrand Double-Bezel Architecture
+ * - Clean SVG badges & Verified Production Years
  * - 0% Emojis, 100% Solid 60-30-10 Palette
- * - Continuous Motion Velocity Ticker
  */
 export default function Skills() {
   const { skillsCategories } = portfolioData;
@@ -61,54 +18,28 @@ export default function Skills() {
 
   return (
     <section id="skills" className="relative w-full py-28 md:py-36 bg-white dark:bg-[#0f1117] text-slate-900 dark:text-white transition-colors">
-      <div className="container mx-auto text-center px-4 sm:px-6 max-w-6xl">
+      <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-900/40 mb-3">
-            <span>[ 05 // TECH STACK ]</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-900/40 mb-3">
+            <span>Tech Stack & Tooling</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-extrabold font-pixel">
-            <Highlighter action="underline" color="#FFD700">
-              Tech Stack & Tooling
-            </Highlighter>
+          <h2 className="text-4xl sm:text-5xl font-extrabold font-pixel tracking-tight">
+            Tech Stack & Tooling
           </h2>
-          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2">
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
             Production-tested frameworks, enterprise databases, and cloud engineering technologies.
           </p>
         </div>
-      </div>
 
-      {/* Infinite Velocity Logo Tickers */}
-      <div className="relative max-w-screen-lg mx-auto flex flex-col gap-4 overflow-hidden mb-16">
-        
-        <VelocityText baseVelocity={-4} numCopies={4}>
-          {skillsRow1.map((logo, index) => (
-            <div key={index} className="w-20 h-20 mx-3 p-2 bg-slate-100 dark:bg-[#161b26] rounded-2xl border border-slate-200 dark:border-white/10 shadow-xs flex items-center justify-center">
-              {logo}
-            </div>
-          ))}
-        </VelocityText>
-
-        <VelocityText baseVelocity={4} numCopies={4}>
-          {skillsRow2.map((logo, index) => (
-            <div key={index} className="w-20 h-20 mx-3 p-2 bg-slate-100 dark:bg-[#161b26] rounded-2xl border border-slate-200 dark:border-white/10 shadow-xs flex items-center justify-center">
-              {logo}
-            </div>
-          ))}
-        </VelocityText>
-
-      </div>
-
-      {/* Category Pills & Breakdown (Double-Bezel Architecture) */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6">
-        
+        {/* Category Pills & Breakdown (Double-Bezel Architecture) */}
         <div className="flex justify-center gap-2 flex-wrap mb-10">
           <button
             onClick={() => setSelectedCat('all')}
             className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all active:scale-95 ${
               selectedCat === 'all'
-                ? 'bg-blue-600 text-white shadow-sm'
+                ? 'bg-blue-600 text-white shadow-xs'
                 : 'bg-slate-100 dark:bg-[#161b26] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10 hover:bg-slate-200 dark:hover:bg-white/5'
             }`}
           >
@@ -120,7 +51,7 @@ export default function Skills() {
               onClick={() => setSelectedCat(cat.id)}
               className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all active:scale-95 ${
                 selectedCat === cat.id
-                  ? 'bg-blue-600 text-white shadow-sm'
+                  ? 'bg-blue-600 text-white shadow-xs'
                   : 'bg-slate-100 dark:bg-[#161b26] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/10 hover:bg-slate-200 dark:hover:bg-white/5'
               }`}
             >

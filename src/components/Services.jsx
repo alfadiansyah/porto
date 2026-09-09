@@ -1,30 +1,28 @@
 import React, { useState } from 'react';
-import { Highlighter } from "@/components/ui/highlighter";
 import { portfolioData } from '../data/portfolioData';
 import { 
   CheckCircle2, 
-  MessageSquare, 
   Clock, 
   Layers, 
   ShieldCheck, 
   Rocket, 
   Building2, 
   Zap,
-  ArrowRight,
-  ArrowUpRight
+  ArrowRight
 } from 'lucide-react';
 
 /**
- * Freelance Services & 5-Tier Pricing Section
- * Engineered strictly under gpt-taste, high-end-visual-design, & minimalist-ui:
- * - Double-Bezel (Doppelrand) Nested Card Architecture
- * - Button-in-Button kinetic CTA buttons
- * - 60-30-10 Solid Color Distribution (0% Gradients)
- * - 0% Emojis, 100% Professional Typography
+ * Freelance Services & 5-Tier Pricing Suite
+ * 100% Taste-Skill Compliance:
+ * - Doppelrand Double-Bezel (Concentric Hardware Cards)
+ * - 5 Tiers ($100, $500, $700, $1250, $1500 / mo)
+ * - Instant IDR / USD Currency Switcher
+ * - Clean Inline Pricing & WhatsApp Direct Dispatch
+ * - 0% Emojis, 100% Solid 60-30-10 Palette
  */
 export default function Services() {
   const { freelanceServices } = portfolioData;
-  const [currency, setCurrency] = useState('IDR'); // 'IDR' or 'USD'
+  const [currency, setCurrency] = useState('IDR');
 
   const tierIcons = {
     1: Rocket,
@@ -76,14 +74,13 @@ export default function Services() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-block mb-3">
-            <h2 className="text-4xl sm:text-5xl font-extrabold font-pixel">
-              <Highlighter action="underline" color="#FFD700">
-                Freelance Services & Tiers
-              </Highlighter>
-            </h2>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-900/40 mb-3">
+            <span>Freelance Services & Pricing</span>
           </div>
-          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2">
+          <h2 className="text-4xl sm:text-5xl font-extrabold font-pixel tracking-tight">
+            Freelance Services & Tiers
+          </h2>
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
             Engineering packages designed for modern web apps, enterprise ERP customizations, secure backend microservices, and dedicated monthly retainers.
           </p>
 
@@ -99,7 +96,7 @@ export default function Services() {
               className="relative w-16 h-8 p-1 rounded-full bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 active:scale-95"
             >
               <div 
-                className={`w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold shadow-sm transition-transform duration-200 ${
+                className={`w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold shadow-xs transition-transform duration-200 ${
                   currency === 'USD' ? 'translate-x-8' : 'translate-x-0'
                 }`}
               >
@@ -131,7 +128,7 @@ export default function Services() {
                 {/* Outer Badge */}
                 {service.badge && (
                   <div className="absolute -top-3 right-6 z-10">
-                    <span className={`px-3.5 py-1 rounded-full text-xs font-bold shadow-sm ${getBadgeStyle(service.tier)}`}>
+                    <span className={`px-3.5 py-1 rounded-full text-xs font-bold shadow-xs ${getBadgeStyle(service.tier)}`}>
                       {service.badge}
                     </span>
                   </div>
@@ -143,7 +140,7 @@ export default function Services() {
                   <div>
                     {/* Tier Header */}
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-2xl bg-slate-100 dark:bg-[#0f1117] border border-slate-200 dark:border-white/10 flex items-center justify-center text-blue-600 dark:text-blue-400 shadow-sm">
+                      <div className="w-10 h-10 rounded-2xl bg-slate-100 dark:bg-[#0f1117] border border-slate-200 dark:border-white/10 flex items-center justify-center text-blue-600 dark:text-blue-400 shadow-xs">
                         <IconComponent className="w-5 h-5" />
                       </div>
                       <div>
@@ -207,7 +204,7 @@ export default function Services() {
 
                     <button
                       onClick={() => handleOrder(service)}
-                      className={`w-full py-2 pl-4 pr-1.5 rounded-full font-bold text-xs flex items-center justify-between group shadow-sm transition-all duration-200 active:scale-98 ${
+                      className={`w-full py-2 pl-4 pr-1.5 rounded-full font-bold text-xs flex items-center justify-between group shadow-xs transition-all duration-200 active:scale-98 ${
                         isFeatured
                           ? 'bg-blue-600 hover:bg-blue-500 text-white'
                           : 'bg-slate-900 hover:bg-slate-800 text-white dark:bg-white dark:hover:bg-slate-100 dark:text-slate-950'
@@ -242,7 +239,7 @@ export default function Services() {
               href="https://wa.me/6281395540904?text=Hi%20Giovanni,%20I%20have%20a%20custom%20engineering%20project%20and%20would%20like%20to%20discuss."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 pl-5 pr-2 py-2 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-all duration-200 active:scale-98 shadow-sm group"
+              className="inline-flex items-center gap-3 pl-5 pr-2 py-2 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-all duration-200 active:scale-98 shadow-xs group"
             >
               <span>Discuss Custom Project on WhatsApp</span>
               <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center transition-transform duration-200 group-hover:translate-x-0.5">

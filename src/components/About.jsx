@@ -1,5 +1,4 @@
 import React from 'react';
-import { Highlighter } from "@/components/ui/highlighter";
 import { portfolioData } from '../data/portfolioData';
 import { 
   ShieldCheck, 
@@ -13,11 +12,10 @@ import {
 
 /**
  * About Section - High-End Bento Grid Architecture
- * Engineered strictly under gpt-taste, high-end-visual-design, & minimalist-ui:
- * - Double-Bezel (Doppelrand) Nested Card Architecture
+ * 100% Taste-Skill Compliance:
+ * - Doppelrand Double-Bezel Frame (Concentric Hardware Cards)
  * - 0% Emojis, 100% Solid 60-30-10 Palette
- * - Editorial Hierarchy & Clean Spacing
- * - Button-in-Button Kinetic CTAs
+ * - Clear Editorial Layout & Production Metric Matrix
  */
 export default function About() {
   const { personalInfo } = portfolioData;
@@ -53,15 +51,13 @@ export default function About() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-900/40 mb-3">
-            <span>[ 01 // OVERVIEW ]</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-900/40 mb-3">
+            <span>Executive Profile</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-extrabold font-pixel">
-            <Highlighter action="underline" color="#FFD700">
-              About Giovanni
-            </Highlighter>
+          <h2 className="text-4xl sm:text-5xl font-extrabold font-pixel tracking-tight">
+            About Giovanni
           </h2>
-          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-3">
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
             Enterprise backend software engineer, full-stack developer, and technical consultant specializing in mission-critical architecture.
           </p>
         </div>
@@ -123,7 +119,7 @@ export default function About() {
               <div className="flex flex-wrap items-center gap-3 pt-6 mt-6 border-t border-slate-100 dark:border-white/5">
                 <a
                   href="#projects"
-                  className="inline-flex items-center gap-2 pl-4 pr-1.5 py-1.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-sm transition-all group"
+                  className="inline-flex items-center gap-2 pl-4 pr-1.5 py-1.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-xs transition-all group"
                 >
                   <span>Explore Case Studies</span>
                   <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center transition-transform group-hover:translate-x-0.5">
@@ -136,7 +132,7 @@ export default function About() {
                   download="CV_Giovanni_Alfadiansyah.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 pl-4 pr-1.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-bold text-xs border border-slate-300 dark:border-slate-700 shadow-sm transition-all group"
+                  className="inline-flex items-center gap-2 pl-4 pr-1.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-bold text-xs border border-slate-300 dark:border-slate-700 shadow-xs transition-all group"
                 >
                   <span>Download Master CV</span>
                   <div className="w-6 h-6 rounded-full bg-slate-900/10 dark:bg-white/10 flex items-center justify-center transition-transform group-hover:-translate-y-0.5">
@@ -199,7 +195,7 @@ export default function About() {
                   href={personalInfo.whatsapp}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full py-2 pl-4 pr-1.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-between shadow-sm transition-all group active:scale-98"
+                  className="w-full py-2 pl-4 pr-1.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-between shadow-xs transition-all group active:scale-98"
                 >
                   <span>Connect on WhatsApp</span>
                   <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center transition-transform group-hover:scale-105">

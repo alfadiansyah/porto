@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { Download, Moon, Sun, Send, Menu, X, ArrowUpRight } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 /**
  * Floating Island Pill Navigation Bar
- * Engineered according to the high-end-visual-design & gpt-taste specifications.
+ * 100% Taste-Skill Compliance:
+ * - Doppelrand Double-Bezel Glass Floating Island
+ * - Button-in-Button CV Download CTA
+ * - 0% Emojis & Clean Editorial Monogram
  */
 export default function Navbar({ isDark, toggleTheme, scrollToSection, activeSection }) {
   const { personalInfo } = portfolioData;
@@ -29,7 +32,7 @@ export default function Navbar({ isDark, toggleTheme, scrollToSection, activeSec
     <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-5xl transition-all duration-300">
       
       {/* Outer Shell (Double-Bezel Floating Island) */}
-      <div className="rounded-full p-1 border border-slate-200/80 dark:border-white/10 bg-white/80 dark:bg-[#0f1117]/80 backdrop-blur-2xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.35)]">
+      <div className="rounded-full p-1 border border-slate-200/80 dark:border-white/10 bg-white/85 dark:bg-[#0f1117]/85 backdrop-blur-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.4)]">
         
         <div className="flex items-center justify-between px-3 sm:px-4 py-1.5">
           
@@ -58,7 +61,7 @@ export default function Navbar({ isDark, toggleTheme, scrollToSection, activeSec
                   onClick={() => handleNavClick(link.id)}
                   className={`px-3 py-1 rounded-full text-xs font-semibold transition-all duration-200 ${
                     isActive
-                      ? 'bg-white dark:bg-[#0f1117] text-blue-600 dark:text-blue-400 shadow-sm'
+                      ? 'bg-white dark:bg-[#0f1117] text-blue-600 dark:text-blue-400 shadow-xs'
                       : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
                   }`}
                 >
@@ -97,7 +100,7 @@ export default function Navbar({ isDark, toggleTheme, scrollToSection, activeSec
               download="CV_Giovanni_Alfadiansyah.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 pl-3.5 pr-1.5 py-1.5 text-xs font-bold rounded-full bg-blue-600 hover:bg-blue-500 text-white shadow-sm transition-all duration-200 group active:scale-95"
+              className="inline-flex items-center gap-2 pl-3.5 pr-1.5 py-1.5 text-xs font-bold rounded-full bg-blue-600 hover:bg-blue-500 text-white shadow-xs transition-all duration-200 group active:scale-95"
             >
               <span>CV</span>
               <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center transition-transform duration-200 group-hover:translate-x-0.5">

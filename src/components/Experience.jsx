@@ -1,14 +1,13 @@
 import React from 'react';
 import { Calendar, MapPin, CheckCircle2 } from 'lucide-react';
-import { Highlighter } from "@/components/ui/highlighter";
 import { portfolioData } from '../data/portfolioData';
 
 /**
  * Work Experience Timeline
- * Engineered strictly under gpt-taste, high-end-visual-design, & minimalist-ui:
- * - Double-Bezel (Doppelrand) Nested Card Architecture
+ * 100% Taste-Skill Compliance:
+ * - Doppelrand Double-Bezel Architecture
+ * - Subproject deep-dives (Bank Mega CCBM revamp & maintenance)
  * - 0% Emojis, 100% Solid 60-30-10 Palette
- * - Editorial Hierarchy & Clean Spacing
  */
 export default function Experience() {
   const { experiences } = portfolioData;
@@ -19,16 +18,14 @@ export default function Experience() {
         
         {/* Section Title */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-900/40 mb-3">
-            <span>[ 02 // CAREER TIMELINE ]</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-900/40 mb-3">
+            <span>Career Timeline</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-extrabold font-pixel">
-            <Highlighter action="underline" color="#FFD700">
-              Work Experience
-            </Highlighter>
+          <h2 className="text-4xl sm:text-5xl font-extrabold font-pixel tracking-tight">
+            Work Experience
           </h2>
-          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2">
-            My professional career journey across government cybersecurity, enterprise banking, and consulting.
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+            Professional track record across government cybersecurity, enterprise banking, and consulting.
           </p>
         </div>
 
